@@ -326,7 +326,21 @@
 
 
 
-  
+  <article class="post white-box comments">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+    </section>
+  </article>
 
 
   
@@ -484,13 +498,7 @@
     <div class='content pure'>
       <ul class="entry">
         
-          <li><a class="flat-box" title="/main/categories/Dev/" href="/main/categories/Dev/"><div class='name'>Dev</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box child" title="/main/categories/Dev/Hexo/" href="/main/categories/Dev/Hexo/"><div class='name'>Hexo</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box child" title="/main/categories/Dev/Shell-Scripts/" href="/main/categories/Dev/Shell-Scripts/"><div class='name'>Shell Scripts</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box" title="/main/categories/教程/" href="/main/categories/教程/"><div class='name'>教程</div><div class='badge'>(8)</div></a></li>
+          <li><a class="flat-box" title="/main/categories/科普文章/" href="/main/categories/科普文章/"><div class='name'>科普文章</div><div class='badge'>(1)</div></a></li>
         
       </ul>
     </div>
@@ -504,27 +512,6 @@
           
           
             
-  <section class='widget tagcloud'>
-    
-<header class='pure'>
-  <div><i class="fas fa-fire fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;热门标签</div>
-  
-    <a class="rightBtn"
-    
-      rel="nofollow"
-    
-    
-    href="/main/blog/tags/"
-    title="blog/tags/">
-    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
-  
-</header>
-
-    <div class='content pure'>
-      <a href="/main/tags/Hexo/" style="font-size: 24px; color: #555">Hexo</a> <a href="/main/tags/shell/" style="font-size: 24px; color: #555">shell</a> <a href="/main/tags/ss/" style="font-size: 14px; color: #999">ss</a>
-    </div>
-  </section>
-
 
           
         
@@ -688,6 +675,38 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+    
+      <script src="https://cdn.jsdelivr.net/gh/xaoxuu/volantis@1/js/volantis.min.js"></script>
+    
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var notify = 'false' == true;
+  var verify = 'false' == true;
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    notify: notify,
+    verify: verify,
+    guest_info: guest_info,
+    
+      path: "/404.html",
+    
+    appId: "6dPaxfKG8a4JqjL2249qbGxi-gzGzoHsz",
+    appKey: "1WaiLl85tDxWJW0A6r6cuuMg",
+    placeholder: "请留言告诉我您要访问哪个页面找不到了",
+    pageSize:'10',
+    avatar:'mp',
+    lang:'zh-cn',
+    highlight:'false'
+  })
+  </script>
 
 
 
