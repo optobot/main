@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>【转载】基于深度学习的目标检测发展综述 | optobotlab</title>
+  
+  
+
+  
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.3/css/all.min.css">
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/main/style.css">
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+</head>
+
+<body>
+  
+  
+  <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/main/' >
+        
+          optobotlab
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/main/"
+                  
+                  
+                  id="main">
+									<i class='fas fa-grin fa-fw'></i>&nbsp;文章
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/main/blog/categories/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="mainblogcategories">
+									<i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="搜索" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/main/"
+                
+                
+                id="main">
+								<i class='fas fa-clock fa-fw'></i>&nbsp;近期文章
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/main/friends/"
+                
+                  rel="nofollow"
+                
+                
+                id="mainfriends">
+								<i class='fas fa-link fa-fw'></i>&nbsp;我的友链
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="https://optobot.github.io/about/"
+                
+                  rel="nofollow"
+                
+                
+                id="https:optobot.github.ioabout">
+								<i class='fas fa-info-circle fa-fw'></i>&nbsp;关于
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/main/2018/12/30/example/1/">
+        【转载】基于深度学习的目标检测发展综述
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2018-12-30</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/main/categories/科普文章/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>科普文章</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class='notlink'>
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          <h2 id="0-前言"><a href="#0-前言" class="headerlink" title="0 前言"></a>0 前言</h2><p>  所谓<strong>目标检测</strong>，就是找出图像中所有感兴趣的目标（物体），确定它们的位置和大小，是机器视觉领域的核心问题之一。由于各类物体有不同的<strong>外观、形状、姿态</strong>，加上成像时<strong>光照、角度、遮挡</strong>等因素的干扰，目标检测一直是机器视觉领域最具有挑战性的问题之一。</p>
+<a id="more"></a>
+<p>计算机视觉中关于图像识别有四大类任务：</p>
+<p><strong>分类(Classification)</strong>：解决“是什么”的问题，即给定一张图片或一段视频判断里面包含什么类别的目标；</p>
+<p><strong>定位(Location)</strong>：解决“在哪里”的问题，即定位出这个目标的的位置，通常为但目标问题；</p>
+<p><strong>检测(Detection)</strong>：解决“是什么、在哪里”的问题，即定位出这个目标的的位置并且知道目标物分别是什么，通常为多目标问题；</p>
+<p><strong>分割(Segmentation)</strong>：分为实例的分割（Instance-level）和场景分割（Scene-level），解决“每一个像素属于哪个目标物或场景”的问题；</p>
+<p><img src="https://img.vim-cn.com/1b/dab7ab30214ec750a0442b4083f609c7424321.webp" alt="目标检测任务分类" title="目标检测任务分类"></p>
+<center><font face="黑体">图0.1:目标检测任务分类</font></center>
+
+<p>目标检测对于人类来说并不困难，通过对图片中不同颜色模块的感知很容易定位并分类出其中目标物体，但对于计算机来说，面对的是RGB像素矩阵，很难从图像中直接得到狗和猫这样的抽象概念并定位其位置，再加上有时候多个物体和杂乱的背景混杂在一起，目标检测变得十分困难。</p>
+<p>但科学技术永远是第一生产力，目标检测始终是科研人员研究的热点问题，各种理论和方法不断涌现。</p>
+<p>在传统视觉领域，目标检测主要集中于一些特定目标的检测，比如人脸检测和行人检测等，已经形成了非常成熟的技术。但对于其他普通的目标检测虽有过很多的尝试，但是效果总是不太令人满意。</p>
+<p>传统的目标检测一般使用<strong>滑动窗口的框架</strong>，主要包括三个步骤：</p>
+<p><strong>1)利用不同尺寸的滑动窗口框住图中的某一部分作为候选区域；</strong></p>
+<p><strong>2)提取候选区域相关的视觉特征。</strong>比如人脸检测常用的Harr特征、行人检测和普通目标检测常用的HOG特征等；</p>
+<p><strong>3)利用分类器进行识别，</strong>如常用的 SVM 模型。</p>
+<p>传统的目标检测中，多尺度形变部件模型DPM (Deformable Part Model)是出类拔萃的，连续获得VOC (Visual Object Class) 2007—2009的检测冠军，2010年其作者Felzenszwalb Pedro被VOC授予”终身成就奖”。DPM把物体看成了多个组成的部件（比如人脸的鼻子、嘴巴等），用部件间的关系来描述物体，这个特性非常符合自然界很多物体的非刚体特征。DPM可以看做是 HOG+SVM 的扩展，很好的继承了两者的优点，在人脸检测、行人检测等任务上取得了不错的效果，但是DPM相对复杂，检测速度也较慢，从而也出现了很多改进的方法。正当大家热火朝天改进DPM性能的时候，基于深度学习的目标检测横空出世，迅速盖过了DPM的风头，很多之前研究传统目标检测算法的研究者也开始转向深度学习。</p>
+<p>基于深度学习的目标检测发展起来后，其实效果也一直难以突破。比如文献“Deep Neural Networks for Object Detection. Advances in Neural Information Processing Systems 26 (NIPS), 2013”中的算法在VOC 2007测试集合上的mAP只能30%多一点，文献“OverFeat: Integrated recognition, localization and detection using convolutional networks. In ICLR, 2014”中的OverFeat在ILSVRC 2013测试集上的mAP只能达到24.3%。2013年R-CNN诞生了，VOC 2007测试集的mAP被提升至48%，2014年时通过修改网络结构又飙升到了66%，同时ILSVRC 2013测试集的mAP也被提升至31.4%。</p>
+<p>R-CNN，即Region-based Convolutional Neural Networks，是一种结合区域提名(Region Proposal) 和卷积神经网络(CNN)的目标检测方法。Ross Girshick在2013年的开山之作《Rich Feature Hierarchies for Accurate Object Detection and Semantic Segmentation》奠定了这个子领域的基础。</p>
+<p>R-CNN这个领域目前研究非常活跃，先后出现了R-CNN、SPP-net、Fast R-CNN、Faster R-CNN、R-FCN、YOLO、SSD等研究。Ross Girshick作为这个领域的开山鼻祖，在这发展过程中做出了巨大的贡献，R-CNN、Fast R-CNN、Faster R-CNN、YOLO都和他有关。这些创新的工作其实很多时候是把一些传统视觉领域的方法和深度学习结合起来了，比如选择性搜索（Selective Search)和图像金字塔（Pyramid）等。</p>
+<p>深度学习相关的目标检测方法目前大致分为两派：</p>
+<p><strong>1)基于区域提名的</strong>，如R-CNN、SPP-net、Fast R-CNN、Faster R-CNN、R-FCN等；<br><strong>2)端到端（End-to-End）</strong>，无需区域提名的，如YOLO、SSD等。</p>
+<p>目前来说，基于区域提名的方法占据上风，但端到端的方法速度上优势明显，后续的发展潜力较大。</p>
+<center><br><img src="https://img.vim-cn.com/fc/3323f987f0b0b3d642cc54b3055acacc0b2724.webp" width="100%"><br><center><font face="黑体">图0.2:目标检测方法概述</font></center>
+
+<h2 id="1-相关研究"><a href="#1-相关研究" class="headerlink" title="1 相关研究"></a>1 相关研究</h2><p>我们先来回顾一下目标检测中广泛使用的区域提名——选择性搜索，以及用深度学习做目标检测的早期工作——Overfeat 。</p>
+<h3 id="1-1-选择性搜索"><a href="#1-1-选择性搜索" class="headerlink" title="1.1 选择性搜索"></a>1.1 选择性搜索</h3><p>目标检测的第一步是要做区域提名(Region Proposal)，也就是找出可能的感兴趣区域（Region Of Interest, ROI）。区域提名类似于光学字符识别 (OCR) 领域的切分，OCR切分常用过切分方法，简单说就是尽量切碎到小的连通域（比如小的笔画之类），然后再根据相邻块的一些形态学特征进行合并。但目标检测的对象相比OCR领域千差万别，而且图形不规则，大小不一，所以一定程度上可以说区域提名是比OCR切分更难的一个问题。</p>
+<p>区域提名可能的方法有：</p>
+<p><strong>1)滑动窗口</strong>。滑动窗口本质上是穷举法，利用不同的尺度和长宽比把所有可能的大大小小的块都穷举出来，然后送去识别，识别出来概率大的就留下来。显然，这样的方法复杂度太高，产生了很多的冗余候选区域，在现实当中不可行。</p>
+<p><strong>2)规则块</strong>。在穷举法的基础上进行了一些剪枝，只选用固定的大小和长宽比。这在一些特定的应用场景中是很有效的，比如拍照搜题APP小猿搜题中的汉字检测，因为汉字方方正正，长宽比大多比较一致，因此用规则块做区域提名是一种比较合适的选择。但是对于普通的目标检测来说，规则块依然需要访问很多的位置，复杂度高。</p>
+<p><strong>3)选择性搜索</strong>。从机器学习的角度来说，前面的方法召回是不错了，但是精度并不能令人满意，问题的核心在于如何有效地去除冗余候选区域。其实冗余候选区域大多是发生了重叠，选择性搜索利用这一点，自底向上合并相邻的重叠区域，从而减少冗余。</p>
+<p>当然，区域提名并不只有以上所说的三种方法，实际上这一方面是非常灵活的，因此变种也很多，感兴趣的读者自行参考相关文献。</p>
+<p>选择性搜索的具体算法细节如下所示。总体上选择性搜索是自底向上不断合并候选区域的迭代过程。</p>
+<p><img src="https://img.vim-cn.com/23/e47c866a6cd07a84568cdc873314643b899d47.webp" alt=""></p>
+<p>输入: 一张图片<br>输出：候选的目标位置集合L</p>
+<p><strong>算法：</strong><br>1)利用过切分方法得到候选的区域集合R = {r1,r2,…,rn}<br>2)初始化相似集合S = ϕ<br>3) foreach 相邻区域对(ri,rj) do</p>
+<center>计算相似度s(ri,rj)<br><br>S = S ∪ s(ri,rj)</center>
+
+<p>4)while S not=ϕ do</p>
+<center>得到最大的相似度s(ri,rj)=max(S)<br><br>合并对应的区域rt = ri ∪ rj<br><br>移除ri对应的所有相似度：S = S\s(ri,r<em>)<br><br>移除rj对应的所有相似度：S = S\s(r</em>,rj)<br><br>计算rt对应的相似度集合St<br><br>S = S ∪ St<br><br>R = R ∪ rt </center>
+
+<p>5)L = R中所有区域对应的边框</p>
+<p>从算法不难看出，R中的区域都是合并后的，因此减少了不少冗余，相当于准确率提升了，但是我们还需要继续保证召回率，因此选择性搜索算法中的相似度计算策略就显得非常关键了。如果简单采用一种策略很容易错误合并不相似的区域，比如只考虑轮廓时，不同颜色的区域很容易被误合并。选择性搜索采用多样性策略来增加候选区域以保证召回，比如颜色空间考虑RGB、灰度、HSV及其变种等，相似度计算时既考虑颜色相似度，又考虑纹理、大小、重叠情况等。</p>
+<p>总体上，选择性搜索是一种比较朴素的区域提名方法，被早期的基于深度学习的目标检测方法（包括Overfeat 和R-CNN等）广泛采用，但被当前的新方法弃用了。</p>
+<h3 id="1-2-OverFeat"><a href="#1-2-OverFeat" class="headerlink" title="1.2 OverFeat"></a>1.2 OverFeat</h3><p>OverFeat[论文下载链接]是用CNN统一来做分类、定位和检测的经典之作，作者是深度学习大神Yann Lecun在纽约大学的团队。OverFeat也是ILSVRC 2013任务3（分类+定位）的冠军得主。</p>
+<p>OverFeat的核心思想有三点：</p>
+<p><strong>1)区域提名：</strong>结合滑动窗口和规则块，即多尺度（multi-scale)的滑动窗口；</p>
+<p><strong>2)分类和定位：</strong>统一用CNN来做分类和预测边框位置，模型与AlexNet类似，其中1-5层为特征抽取层，即将图片转换为固定维度的特征向量，6-9层为分类层(分类任务专用)，不同的任务（分类、定位、检测）共用特征抽取层（1-5层），只替换6-9层；</p>
+<p><strong>3)累积：</strong>因为用了滑动窗口，同一个目标对象会有多个位置，也就是多个视角；因为用了多尺度，同一个目标对象又会有多个大小不一的块。这些不同位置和不同大小块上的分类置信度会进行累加，从而使得判定更为准确。</p>
+<p>OverFeat的关键步骤有四步：</p>
+<p><strong>1)利用滑动窗口进行不同尺度的区域提名，然后使用CNN模型对每个区域进行分类，得到类别和置信度。</strong>从下图可以看出，不同缩放比例时，检测出来的目标对象数量和种类存在较大差异</p>
+<p><img src="https://img.vim-cn.com/ee/fb48f2e998a014e2bee97a5f341dad9bc79d96.webp" alt="图1.1.1: Overfeat关键步骤一" title="Overfeat关键步骤一"></p>
+<center><font face="黑体">图1.1.1: Overfeat关键步骤一<font></font></font></center>
+
+<p><strong>2)利用多尺度滑动窗口来增加检测数量，提升分类效果</strong>，如下图所示</p>
+<p><img src="https://img.vim-cn.com/63/2dbbc63d10daa8da6d7cb19cdc58702c5d60e3.webp" alt="图1.1.2: Overfeat关键步骤二" title="Overfeat关键步骤二"></p>
+<center><font face="黑体">图1.1.2: Overfeat关键步骤二<font></font></font></center>
+
+
+<p><strong>3)用回归模型预测每个对象的位置</strong>，从下图来看，放大比例较大的图片，边框数量也较多</p>
+<p><img src="https://img.vim-cn.com/d9/4406003d645ac4cce97ad5f2013bf88e19098b.webp" alt="图1.1.3: Overfeat关键步骤三" title="Overfeat关键步骤三"></p>
+<center><font face="黑体">图1.1.3: Overfeat关键步骤三<font></font></font></center>
+
+<p><strong>4)边框合并</strong></p>
+<p><img src="https://img.vim-cn.com/ef/6ba2287ff6fd8337fb60fda6ec39b8ebda118c.webp" alt="图1.1.4: Overfeat关键步骤四" title="Overfeat关键步骤四"></p>
+<center><font face="黑体">图1.1.4: Overfeat关键步骤四<font></font></font></center>
+
+<p>Overfeat是CNN用来做目标检测的早期工作，主要思想是采用了多尺度滑动窗口来做分类、定位和检测，虽然是多个任务但重用了模型前几层，这种模型重用的思路也是后来R-CNN系列不断沿用和改进的经典方法。</p>
+<p>当然Overfeat也是有不少缺点的，至少速度和效果都有很大提升空间，后面的R-CNN系列在这两方面做了很多提升。</p>
+<h2 id="2-基于区域提名的方法"><a href="#2-基于区域提名的方法" class="headerlink" title="2 基于区域提名的方法"></a>2 基于区域提名的方法</h2><p>本小节主要介绍基于区域提名的方法，包括R-CNN、SPP-net、Fast R-CNN、Faster R-CNN、R-FCN。</p>
+<h3 id="2-1-R-CNN"><a href="#2-1-R-CNN" class="headerlink" title="2.1 R-CNN"></a>2.1 R-CNN</h3><p>如前面所述，早期的目标检测，大都使用滑动窗口的方式进行窗口提名，这种方式本质是穷举法，R-CNN[论文下载链接]采用的是Selective Search。</p>
+<p>以下是R-CNN的主要步骤：</p>
+<p><strong>1)区域提名</strong>：通过Selective Search从原始图片提取2000个左右区域候选框；</p>
+<p><strong>2)区域大小归一化</strong>：把所有侯选框缩放成固定大小（原文采用227×227）；</p>
+<p><strong>3)特征提取</strong>：通过CNN网络，提取特征；</p>
+<p><strong>4)分类与回归</strong>：在特征层的基础上添加两个全连接层，再用SVM分类来做识别，用线性回归来微调边框位置与大小，其中每个类别单独训练一个边框回归器。</p>
+<p>其中目标检测系统的结构如下图所示，注意，图中的第2步对应步骤中的1、2步，即包括区域提名和区域大小归一化。</p>
+<p><img src="https://img.vim-cn.com/4e/5543bdb197e7179be44b0616252825ae30fd40.webp" alt="图1.2.1: R-CNN框架" title="R-CNN框架"></p>
+<center><font face="黑体">图1.2.1: R-CNN框架<font></font></font></center>
+
+<p>OverFeat可以看做是R-CNN的一种特殊情况，只需要把Selective Search换成多尺度的滑动窗口，每个类别的边框回归器换成统一的边框回归器，SVM换为多层网络即可。但是OverFeat实际比R-CNN快9倍，这主要得益于卷积相关的共享计算。</p>
+<p>事实上，R-CNN有很多缺点：</p>
+<p><strong>1)重复计算</strong>：R-CNN虽然不再是穷举，但依然有2000个左右的候选框，这些候选框都需要进行CNN操作，计算量依然很大，其中有不少其实是重复计算；</p>
+<p><strong>2)SVM模型</strong>：而且还是线性模型，在标注数据不缺的时候显然不是最好的选择；</p>
+<p><strong>3)训练测试分为多步</strong>，训练的空间和时间代价很高：区域提名、特征提取、分类、回归都是断开的训练的过程，中间数据还需要单独保存，卷积出来的特征需要先存在硬盘上，这些特征需要几百G的存储空间；</p>
+<p><strong>4)速度慢</strong>：前面的缺点最终导致R-CNN出奇的慢，GPU上处理一张图片需要13秒，CPU上则需要53秒。</p>
+<p>看到这里，肯定不少小伙伴会产生疑惑，既然R-CNN速度很慢，那为什么还说它是改进版？事实上，R-CNN的改进体现在其效果上的提升，其中ILSVRC 2013数据集上的mAP由OverFeat的24.3%提升到了31.4%，第一次有了质的改变。</p>
+<h3 id="2-2-SPP-net"><a href="#2-2-SPP-net" class="headerlink" title="2.2 SPP-net"></a>2.2 SPP-net</h3><p>SPP-net<a href="https://arxiv.org/abs/1406.4729" target="_blank" rel="noopener">论文下载链接</a>是MSRA何恺明等人提出的，其主要思想是去掉了原始图像上的crop/warp等操作，换成了在卷积特征上的空间金字塔池化层（Spatial Pyramid Pooling，SPP），如下图所示。之所以要引入SPP层 ，主要原因是CNN的全连接层要求输入图片大小一致，而实际中的输入图片往往大小不一，如果直接缩放到同一尺寸，很可能有的物体会充满整个图片，而有的物体可能只能占到图片的一角。</p>
+<p>传统的解决方案是进行不同位置的裁剪，但是这些裁剪技术往往会导致一些问题出现，比如下图的crop会导致物体不全，warp导致物体被拉伸后形变严重，SPP就是为了解决这种问题的。SPP对整图提取固定维度的特征，再把图片均分成4份，每份提取相同维度的特征，再把图片均分为16份，以此类推。可以看出，无论图片大小如何，提取出来的维度数据都是一致的，这样就可以统一送至全连接层了。SPP思想在后来的R-CNN模型中也被广泛用到。</p>
+<p><img src="https://img.vim-cn.com/58/fe42ebe2c2007f81078a8311e8e2ff3c5d83d3.webp" alt="图1.2.2: 传统crop/warp结构和空间金字塔池化网络的对比" title="传统crop/warp结构和空间金字塔池化网络的对比"></p>
+<center><font face="黑体">图1.2.2: 传统crop/warp结构和空间金字塔池化网络的对比<font></font></font></center>
+
+<p>SPP-net的网络结构如下图所示，实质是最后一层卷积层后加了一个SPP层，将维度不一的卷积特征转换为维度一致的全连接输入。</p>
+<p><img src="https://img.vim-cn.com/ac/5550f59aab041a38fb42dc3e8769d42deafbd6.png" alt="图1.2.3: SPP-net网络结构" title="SPP-net网络结构"></p>
+<p><center><strong><font face="黑体">图1.2.3: SPP-net网络结构<font></font></font></strong></center></p>
+<p>SPP-net做目标检测的主要步骤为：</p>
+<p><strong>1)区域提名</strong>：用Selective Search从原图中生成2000个左右的候选窗口；<br><strong>2)区域大小缩放</strong>：SPP-net不再做区域大小归一化，而是缩放到min(w, h)=s，即统一长宽的最短边长度，s选自{480,576,688,864,1200}中的一个，选择的标准是使得缩放后的候选框大小与224×224最接近；<br><strong>3)特征提取</strong>：利用SPP-net网络结构提取特征；<br><strong>4)分类与回归</strong>：类似R-CNN，利用SVM基于上面的特征训练分类器模型，用边框回归来微调候选框的位置。</p>
+<p>SPP-net解决了R-CNN区域提名时crop/warp带来的偏差问题，提出了SPP层，使得输入的候选框可大可小，但其他方面依然和R-CNN一样，因而依然存在不少问题，这就有了后面的Fast R-CNN。</p>
+<h3 id="2-3-Fast-R-CNN"><a href="#2-3-Fast-R-CNN" class="headerlink" title="2.3 Fast R-CNN"></a>2.3 Fast R-CNN</h3><p>Fast R-CNN<a href="https://arxiv.org/abs/1504.08083" target="_blank" rel="noopener">论文下载链接</a>是要解决R-CNN和SPP-net 2000个左右候选框带来的重复计算问题，其主要思想为：</p>
+<p><strong>1)使用一个简化的SPP层</strong> —— RoI（Region of Interesting） Pooling层，操作与SPP类似；<br><strong>2)训练和测试是不再分多步</strong>：不再需要额外的硬盘来存储中间层的特征，梯度能够通过RoI Pooling层直接传播；此外，分类和回归用Multi-task的方式一起进行；<br><strong>3)SVD</strong>：使用SVD分解全连接层的参数矩阵，压缩为两个规模小很多的全连接层。</p>
+<p>如下图所示，Fast R-CNN的主要步骤如下：</p>
+<p><strong>1)特征提取</strong>：以整张图片为输入，利用CNN得到图片的特征层；<br><strong>2)区域提名</strong>：通过Selective Search等方法从原始图片提取区域候选框，并把这些候选框一一投影到最后的特征层；<br><strong>3)区域归一化</strong>：针对特征层上的每个区域候选框进行RoI Pooling操作，得到固定大小的特征表示；<br><strong>4)分类与回归</strong>：然后再通过两个全连接层，分别用softmax多分类做目标识别，用回归模型进行边框位置与大小微调。</p>
+<p><img src="https://img.vim-cn.com/73/6182e894d1b1045e8f081ab04e9838f4fccc78.png" alt="图1.2.4: Fast R-CNN框架" title="Fast R-CNN框架"></p>
+<p><center><strong><font face="黑体">图1.2.4: Fast R-CNN框架<font></font></font></strong></center></p>
+<p>Fast R-CNN比R-CNN的训练速度（大模型L）快8.8倍，测试时间快213倍，比SPP-net训练速度快2.6倍，测试速度快10倍左右。</p>
+<p><img src="https://img.vim-cn.com/14/547a8ffd8ad381d844ab5babb7705a15e5217c.png" alt="图1.2.5: Fast R-CNN, R-CNN, SPP-net的运行时间比较" title="Fast R-CNN, R-CNN, SPP-net的运行时间比较"></p>
+<h3 id="2-4-Faster-R-CNN"><a href="#2-4-Faster-R-CNN" class="headerlink" title="2.4 Faster R-CNN"></a>2.4 Faster R-CNN</h3><p>Fast R-CNN使用Selective Search来进行区域提名，速度依然不够快。Faster R-CNN<a href="https://arxiv.org/abs/1506.01497" target="_blank" rel="noopener">论文下载链接</a>则直接利用RPN（Region Proposal Networks)网络来计算候选框。RPN以一张任意大小的图片为输入，输出一批矩形区域提名，每个区域对应一个目标分数和位置信息。Faster R-CNN中的RPN结构如下图所示。</p>
+<p><img src="https://img.vim-cn.com/a6/84c0dd210ef882bfcc4851447185a8b67661e1.png" alt="图1.2.6: Region Proposal Network(RPN)" title="Region Proposal Network(RPN)"></p>
+<p>Faster R-CNN的主要步骤如下：</p>
+<p><strong>1)特征提取：</strong>同Fast R-CNN，以整张图片为输入，利用CNN得到图片的特征层；<br><strong>2)区域提名：</strong>在最终的卷积特征层上利用k个不同的矩形框（Anchor Box）进行提名，k一般取9；<br><strong>3)分类与回归：</strong>对每个Anchor Box对应的区域进行object/non-object二分类，并用k个回归模型（各自对应不同的Anchor Box）微调候选框位置与大小，最后进行目标分类。</p>
+<p>总之，Faster R-CNN弃用了Selective Search，引入了RPN网络，使得区域提名、分类、回归一起共用卷积特征，从而得到了进一步的加速。但是，Faster R-CNN需要对20000个Anchor Box先判断是否是目标（目标判定），然后再进行目标识别，分成了两步。</p>
+<h3 id="2-5-R-FCN"><a href="#2-5-R-FCN" class="headerlink" title="2.5 R-FCN"></a>2.5 R-FCN</h3><p>前面的目标检测方法都可以细分为两个子网络：<br><strong>1)共享的全卷积网络；</strong><br><strong>2)不共享计算的ROI相关的子网络（比如全连接网络）。</strong></p>
+<p>R-FCN<a href="https://arxiv.org/abs/1605.06409" target="_blank" rel="noopener">论文下载链接</a>则将最后的全连接层换为了一个位置敏感的的卷积网络，从而让所有计算都可以共享。具体来说，先把每个提名区域划分为k×k个网格，比如R-FCN原文中k的取值为3，则对应的九个网格分别表示：左上top-left，上中top-center，……，右下bottom-right，对应下图中的九宫格及不同颜色的块，每个Grid都有对应的编码，但预测时候会有C+1个输出，C表示类别数目，+1是因为有背景类别，全部的输出通道数量为k2×(C+1)。</p>
+<p><img src="https://img.vim-cn.com/8e/e4bcbb5b551f18205e5fec149bc9c53561e415.png" alt="图1.2.7: R-FCN的person分类可视化过程" title="R-FCN的person分类可视化过程"></p>
+<p><center><strong><font face="黑体">图1.2.7: R-FCN的person分类可视化过程<font></font></font></strong></center></p>
+<p><img src="https://img.vim-cn.com/b8/f88a41b7e144c6af8cd5febcaa1ea45fc8f506.png" alt="图1.2.8: R-FCN框架" title="R-FCN框架"></p>
+<p><center><strong><font face="黑体">图1.2.8: R-FCN框架<font></font></font></strong></center></p>
+<p>需要注意的是，上面两张图中不同位置都存在一个九宫格，但是Pooling时候只有一个起作用，比如bottom-right层只有右下角的小块起作用。那么问题来了，这一层其他的8个框有什么作用呢？答案是它们可以作为其他ROI（偏左或偏上一些的ROI）的右下角。</p>
+<p>R-FCN的步骤为：</p>
+<p><strong>1)区域提名：</strong>使用RPN（Region Proposal Network，区域提名网络），RPN本身是全卷积网络结构；<br><strong>2)分类与回归：</strong>利用和RPN共享的特征进行分类。当做bbox回归时，则将C设置为4。</p>
+<h2 id="3-端到端的方法"><a href="#3-端到端的方法" class="headerlink" title="3 端到端的方法"></a>3 端到端的方法</h2><p>接下来介绍端到端（End-to-End）的目标检测方法，这些方法无需区域提名，包括YOLO和SSD等</p>
+<h3 id="3-1-YOLO"><a href="#3-1-YOLO" class="headerlink" title="3.1 YOLO"></a>3.1 YOLO</h3><p>YOLO<a href="https://arxiv.org/abs/1506.02640" target="_blank" rel="noopener">论文下载链接</a>，即You Only Look Once，顾名思义就是只看一次，进一步把目标判定和目标识别合二为一，所以识别性能有了很大提升，达到每秒45帧，而在快速版YOLO(Fast YOLO，卷积层更少)中，可以达到每秒155帧。</p>
+<p>网络的整体结构如下图所示，针对一张图片，YOLO的处理步骤为：</p>
+<p><strong>1)把输入图片缩放到448×448大小；</strong><br><strong>2)运行卷积网络；</strong></p>
+<p>对模型置信度卡阈值，得到目标位置与类别。<br><img src="https://img.vim-cn.com/82/a0b9eab552ef43125c5f1cb05626bb0e264982.png" alt="YOLO检测系统" title="YOLO检测系统"></p>
+<p><center><strong><font face="黑体">YOLO检测系统<font></font></font></strong></center></p>
+<p>网络的模型如下图所示，将448×448大小的图切成S×S的网格，目标中心点所在的格子负责该目标的相关检测，每个网格预测B个边框及其置信度，以及C种类别的概率。YOLO中S=7，B=2，C取决于数据集中物体类别数量，比如VOC数据集就是C=20。对VOC数据集来说，YOLO就是把图片统一缩放到448×448，然后每张图平均划分为7×7=49个小格子，每个格子预测2个矩形框及其置信度，以及20种类别的概率。<br><img src="https://img.vim-cn.com/7b/22d6072d723d5e3daeae00e55256114ea66a5c.png" alt="1.3.2: YOLO模型" title="1.3.2: YOLO模型"></p>
+<p><center><strong><font face="黑体">1.3.2: YOLO模型<font></font></font></strong></center></p>
+<p>YOLO简化了整个目标检测流程，速度的提升也很大，但是YOLO还是有不少可以改进的地方，比如S×S的网格就是一个比较启发式的策略，如果两个小目标同时落入一个格子中，模型也只能预测一个；另一个问题是Loss函数对不同大小的bbox未做区分。</p>
+<h3 id="3-2-SSD"><a href="#3-2-SSD" class="headerlink" title="3.2 SSD"></a>3.2 SSD</h3><p>SSD<a href="">论文下载链接</a>，即Single Shot MultiBox Detector，冲着YOLO的缺点来的。SSD的框架如图1.3.3所示，图1.3.3(a)表示带有两个Ground Truth边框的输入图片，图1.3.3(b)和©分别表示8×8网格和4×4网格，显然前者适合检测小的目标，比如图片中的猫，后者适合检测大的目标，比如图片中的狗。在每个格子上有一系列固定大小的Box（有点类似前面提到的Anchor Box），这些在SSD称为Default Box，用来框定目标物体的位置，在训练的时候Ground Truth会赋予给某个固定的Box，比如图1.3.3(b)中的蓝框和图1.3.3©中的红框。<br><img src="https://img.vim-cn.com/7e/8628979292f8d7401f4d8b13387eaca70b0349.png" alt="图1.3.3: SSD框架" title="图1.3.3: SSD框架"></p>
+<p><center><strong><font face="黑体">图1.3.3: SSD框架<font></font></font></strong></center></p>
+<p>SSD的网络分为两部分，前面的是用于图像分类的标准网络（去掉了分类相关的层），后面的网络是用于检测的多尺度特征映射层，从而达到检测不同大小的目标。SSD和YOLO的网络结构对比如图所示。<br><img src="https://img.vim-cn.com/a5/1465c37aeed72fb972c968c3a4dd1737e979e8.png" alt="图1.3.4: SSD和YOLO的网络结构对比" title="图1.3.4: SSD和YOLO的网络结构对比"></p>
+<p><center><strong><font face="黑体">图1.3.4: SSD和YOLO的网络结构对比<font></font></font></strong></center></p>
+<p>SSD在保持YOLO高速的同时效果也提升很多，主要是借鉴了Faster R-CNN中的Anchor机制，同时使用了多尺度。但是从原理依然可以看出，Default Box的形状以及网格大小是事先固定的，那么对特定的图片小目标的提取会不够好。</p>
+<h3 id="3-3-YOLOv2-amp-YOLO9000"><a href="#3-3-YOLOv2-amp-YOLO9000" class="headerlink" title="3.3 YOLOv2 &amp; YOLO9000"></a>3.3 YOLOv2 &amp; YOLO9000</h3><p>经过Joseph Redmon等的改进，YOLOv2和YOLO9000算法<a href="https://arxiv.org/abs/1612.08242" target="_blank" rel="noopener">论文下载链接</a>在2017年CVPR上被提出，并获得较佳论文提名，重点解决召回率和定位精度方面的误差。采用Darknet-19作为特征提取网络，增加了批量归一化（Batch Normalization）的预处理，并使用224×224和448×448两阶段训练ImageNet预训练模型后fine-tuning。</p>
+<p>相比于原来的YOLO是利用全连接层直接预测bounding box的坐标，YOLOv2借鉴了Faster R-CNN的思想，引入anchor机制，利用K-Means聚类的方式在训练集中聚类计算出更好的anchor模板，在卷积层使用anchorboxes操作，增加候选框的预测，同时采用较强约束的定位方法，大大提高算法召回率。结合图像细粒度特征，将浅层特征与深层特征相连，有助于对小尺寸目标的检测。<br><img src="https://img.vim-cn.com/67/189843172337df022f9b8c2021d2820d561eb8.png" alt="图1.3.5: YOLOv2在VOC2007上的速度和精度" title="图1.3.5: YOLOv2在VOC2007上的速度和精度"></p>
+<p><center><strong><font face="黑体">图1.3.5: YOLOv2在VOC2007上的速度和精度<font></font></font></strong></center></p>
+<h3 id="3-4-R-SSD"><a href="#3-4-R-SSD" class="headerlink" title="3.4 R-SSD"></a>3.4 R-SSD</h3><p>2017年首尔大学提出了R-SSD算法，解决了SSD算法中不同层feature map都是独立作为分类网络的输入，容易出现相同物体被不同大小的框同时检测出来的情况，还有对小尺寸物体的检测效果比较差的情况。R-SSD算法一方面利用分类网络增加不同层之间的feature map联系，减少重复框的出现；另一方面增加feature pyramid中feature map的个数，使其可以检测更多的小尺寸物体。</p>
+<p>特征融合方式采用同时利用pooling和deconvolution进行特征融合，这种特征融合方式使得融合后每一层的feature map个数都相同，因此可以共用部分参数，具体来讲就是default boxes的参数共享。<br><img src="https://img.vim-cn.com/51/2eb4f03b7237843c11c6289aeaa8a3c29caf3a.png" alt="图1.3.6: 三种特征融合方式" title="图1.3.6: 三种特征融合方式"></p>
+<p><center><strong><font face="黑体">图1.3.6: 三种特征融合方式<font></font></font></strong></center></p>
+<h3 id="3-5-DSSD"><a href="#3-5-DSSD" class="headerlink" title="3.5 DSSD"></a>3.5 DSSD</h3><p>为了解决SSD算法检测小目标困难的问题，2017年北卡大学教堂山分校的Cheng-Yang Fu等提出DSSD算法<a href="https://arxiv.org/abs/1701.06659" target="_blank" rel="noopener">论文下载链接</a>，将SSD算法基础网络从VGG-16更改为ResNet-101，增强网络特征提取能力，其次参考FPN算法思路利用去卷积结构将图像深层特征从高维空间传递出来，与浅层信息融合，联系不同层级之间的图像语义关系，设计预测模块结构，通过不同层级特征之间融合特征输出预测物体类别信息。</p>
+<p>DSSD算法中有两个特殊的结构：Prediction模块；Deconvolution模块。前者利用提升每个子任务的表现来提高准确性，并且防止梯度直接流入ResNet主网络。后者则增加了三个Batch Normalization层和三个3×3卷积层，其中卷积层起到了缓冲的作用，防止梯度对主网络影响太剧烈，保证网络的稳定性。<br><img src="https://img.vim-cn.com/7d/7e2d38c22fcd1b45c7146f7e0bd1713498da50.png" alt="图1.3.7: SSD和DSSD网络结构对比" title="图1.3.7: SSD和DSSD网络结构对比"></p>
+<p><center><strong><font face="黑体">图1.3.7: SSD和DSSD网络结构对比<font></font></font></strong></center></p>
+<h3 id="3-6-DSOD"><a href="#3-6-DSOD" class="headerlink" title="3.6 DSOD"></a>3.6 DSOD</h3><p>2017年复旦大学提出DSOD算法，其并不是在mAP上和其他检测算法做比较，看谁的算法更有效或者速度更快，而是从另一个角度切入说明fine-tune和直接训练检测模型的差异其实是可以减小的，也就是说训练一个检测模型可以不需要大量的数据和预训练好的模型。</p>
+<p>这是由于预训练模型的限制导致：迁移模型结构灵活性差，难以改变网络结构；分类任务预训练模型和检测任务训练会有学习偏差；虽然微调会减少不同目标类别分布的差异性，但深度图等特殊图像迁移效果差异较大。</p>
+<p>SSD算法是在六个尺度的特征图上进行检测，将这六个检测结果综合起来，DSOD算法则则根据DenseNet的设计原理，将相邻的检测结果一半一半的结合起来。DSOD算法是基于SSD算法基础上做的修改，采用的特征提取网络是DenseNet。</p>
+<p>采用Dense Block结构，能避免梯度消失的情况。同时利用Dense Prediction结构，也能大大减少模型的参数量，特征包含更多信息。设计stem结构能减少输入图片信息的丢失，stem结构由3×3卷积和2×2的max pool层组成，其还可以提高算法检测的mAP。<br><img src="https://img.vim-cn.com/d0/cd7bd9c0be552589831350f6b6fac0dadca594.png" alt="图1.3.8: DSOD预测层" title="图1.3.8: DSOD预测层"></p>
+<p><center><strong><font face="黑体">图1.3.8: DSOD预测层<font></font></font></strong></center></p>
+<h3 id="3-7-RON"><a href="#3-7-RON" class="headerlink" title="3.7 RON"></a>3.7 RON</h3><p>2017年清华大学提出了RON算法，结合two stage名的方法和one stage方法的优势，更加关注多尺度对象定位和负空间样本挖掘问题。</p>
+<p>多尺度对象定位——各种尺度的物体可能出现在图像的任何位置，因此应考虑成千上万个具有不同位置/尺度/方位的区域。多尺度表征将显著改善各种尺度的物体检测，但是这些方法总是在网络的一层检测到各种尺度的对象；</p>
+<p>负空间挖掘——对象和非对象样本之间的比例严重不平衡。因此，对象检测器应该具有有效的负挖掘策略。</p>
+<p>RON算法通过设计方向连接结构，利用多尺度表征显著改善各种多尺度物体检测，同时为了减少对象搜索空间，在卷积特征图创建objectness prior引导目标对象搜索，训练时将检测器进行联合优化。并通过多任务损失函数联合优化了反向连接、objectness prior和对象检测，因此可直接预测各种特征图所有位置的最终检测结果。<br><img src="https://img.vim-cn.com/9c/1cc801288020ab016d174844d7cfd22bd3071b.png" alt="图1.3.8: RON" title="图1.3.8: RON"></p>
+<p><center><strong><font face="黑体">图1.3.8: RON<font></font></font></strong></center></p>
+<h3 id="3-8-YOLOv3"><a href="#3-8-YOLOv3" class="headerlink" title="3.8 YOLOv3"></a>3.8 YOLOv3</h3><p><img src="https://img.vim-cn.com/cd/4ea963310d4c5b6400e3ecd2bfd4aaa28648a6.png" alt="图1.3.9: 速度对比图" title="图1.3.9: 速度对比图"></p>
+<p><center><strong><font face="黑体">图1.3.9: 速度对比图<font></font></font></strong></center></p>
+<p>从上边的图中就可以看出，YOLOv3<a href="https://arxiv.org/abs/1804.02767" target="_blank" rel="noopener">论文下载链接</a>最主要的提升网络的就算速度。YOLOv3能在22毫秒内完成处理，并取得28.2mAP的成绩。它的精度和SSD相当，但速度要快上3倍。但是整体模型也变得复杂不少。</p>
+<h2 id="4-小结"><a href="#4-小结" class="headerlink" title="4 小结"></a>4 小结</h2><p>随着深度学习技术在图像各领域的研究深入，出现越来越多的新理论、新方法。two stage的方法和基于回归思想的one stage方法两者相互借鉴，不断融合，取得了很好的效果，也为我们展示了一些未来发展趋势：</p>
+<p><strong>1)参考上下文特征的多特征融合；</strong><br><strong>2)多尺度的对象定位；</strong><br><strong>3)结合循环神经网络（RNN）的图像语义分析。</strong><br><img src="https://img.vim-cn.com/5f/a81a946ed200685240dc5c7771883f2e7eca39.png" alt="图2.1:部分目标检测算法精度和速度对比" title="图2.1:部分目标检测算法精度和速度对比"></p>
+<p><center><strong><font face="黑体">图2.1:部分目标检测算法精度和速度对比<font></font></font></strong></center></p>
+<p><strong>诚然，目标检测还有很长的路要走，比如业界公认较难的小目标检测问题。但我们有理由相信会不断有各种突破出现，还是那句老话——科学技术是第一生产力，期待未来基于深度学习的目标检测的进一步突破！</strong></p>
+<hr>
+<p>作者：StrongerTang</p>
+<p>来源：CSDN</p>
+<p>原文：<a href="https://blog.csdn.net/qq_41590635/article/details/89372866" target="_blank" rel="noopener">https://blog.csdn.net/qq_41590635/article/details/89372866</a></p>
+</center>
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <hr>
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-08-14T15:58:39+08:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>最后更新于 2019年8月14日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://optobot.github.io/main/2018/12/30/example/1/&title=【转载】基于深度学习的目标检测发展综述 | optobotlab&summary=0 前言  所谓目标检测，就是找出图像中所有感兴趣的目标（物体），确定它们的位置和大小，是机器视觉领域的核心问题之一。由于各类物体有不同的外观、形状、姿态，加上成像时光照、角度、遮挡等因素的干扰，目标检测一直是机器视觉领域最具有挑战性的问题之一。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://optobot.github.io/main/2018/12/30/example/1/&title=【转载】基于深度学习的目标检测发展综述 | optobotlab&summary=0 前言  所谓目标检测，就是找出图像中所有感兴趣的目标（物体），确定它们的位置和大小，是机器视觉领域的核心问题之一。由于各类物体有不同的外观、形状、姿态，加上成像时光照、角度、遮挡等因素的干扰，目标检测一直是机器视觉领域最具有挑战性的问题之一。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://optobot.github.io/main/2018/12/30/example/1/&title=【转载】基于深度学习的目标检测发展综述 | optobotlab&summary=0 前言  所谓目标检测，就是找出图像中所有感兴趣的目标（物体），确定它们的位置和大小，是机器视觉领域的核心问题之一。由于各类物体有不同的外观、形状、姿态，加上成像时光照、角度、遮挡等因素的干扰，目标检测一直是机器视觉领域最具有挑战性的问题之一。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+            <div class="prev-next">
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/main/2018/12/30/example/2/" rel="prev" title="【转载】浅析自动驾驶技术">
+                                    
+                                        【转载】浅析自动驾驶技术
+                                    
+                                </a>
+                            </h4>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '【转载】基于深度学习的目标检测发展综述',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+        
+          
+          
+            <section class='widget author'>
+  <div class='content pure'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='https://img.vim-cn.com/b8/9c28737de114493b9cc4286dbbf743c7fc3b4a.jpg'/>
+      </div>
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/main/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:me@xaoxuu.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/xaoxuu"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://music.163.com/#/user/home?id=63035382"
+              class="social fas fa-headphones-alt flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目录</div>
+  
+    <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#0-前言"><span class="toc-text">0 前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-相关研究"><span class="toc-text">1 相关研究</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-选择性搜索"><span class="toc-text">1.1 选择性搜索</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-OverFeat"><span class="toc-text">1.2 OverFeat</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-基于区域提名的方法"><span class="toc-text">2 基于区域提名的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-R-CNN"><span class="toc-text">2.1 R-CNN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-SPP-net"><span class="toc-text">2.2 SPP-net</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-Fast-R-CNN"><span class="toc-text">2.3 Fast R-CNN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-Faster-R-CNN"><span class="toc-text">2.4 Faster R-CNN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-R-FCN"><span class="toc-text">2.5 R-FCN</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-端到端的方法"><span class="toc-text">3 端到端的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-YOLO"><span class="toc-text">3.1 YOLO</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-SSD"><span class="toc-text">3.2 SSD</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-YOLOv2-amp-YOLO9000"><span class="toc-text">3.3 YOLOv2 &amp; YOLO9000</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-R-SSD"><span class="toc-text">3.4 R-SSD</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-DSSD"><span class="toc-text">3.5 DSSD</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-6-DSOD"><span class="toc-text">3.6 DSOD</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-7-RON"><span class="toc-text">3.7 RON</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-8-YOLOv3"><span class="toc-text">3.8 YOLOv3</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-小结"><span class="toc-text">4 小结</span></a></li></ol>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            <section class='widget grid'>
+  
+<header class='pure'>
+  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;导航</div>
+  
+</header>
+
+  <div class='content pure'>
+    <ul class="grid navgation">
+      
+        <li><a class="flat-box" title="/main/" href="/main/"
+          
+          
+          id="main">
+          
+            <i class="fas fa-clock fa-fw" aria-hidden="true"></i>
+          
+          近期文章
+        </a></li>
+      
+        <li><a class="flat-box" title="/main/friends/" href="/main/friends/"
+          
+            rel="nofollow"
+          
+          
+          id="mainfriends">
+          
+            <i class="fas fa-link fa-fw" aria-hidden="true"></i>
+          
+          我的友链
+        </a></li>
+      
+        <li><a class="flat-box" title="https://optobot.github.io/about/" href="https://optobot.github.io/about/"
+          
+            rel="nofollow"
+          
+          
+          id="https:optobot.github.ioabout">
+          
+            <i class="fas fa-info-circle fa-fw" aria-hidden="true"></i>
+          
+          关于
+        </a></li>
+      
+    </ul>
+  </div>
+</section>
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget category'>
+    
+<header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章分类</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/main/blog/categories/"
+    title="blog/categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/main/categories/科普文章/" href="/main/categories/科普文章/"><div class='name'>科普文章</div><div class='badge'>(3)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+
+          
+        
+      
+        
+          
+          
+            
+
+
+
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+  
+    <div class="social-wrapper">
+      
+        
+          <a href="/main/atom.xml"
+            class="social fas fa-rss flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="mailto:me@xaoxuu.com"
+            class="social fas fa-envelope flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://github.com/xaoxuu"
+            class="social fab fa-github flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://music.163.com/#/user/home?id=63035382"
+            class="social fas fa-headphones-alt flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+    </div>
+  
+  <br>
+  <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+  <div>
+    本站使用
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Optobotlab</a>
+    作为主题
+    
+      ，
+      总访问量为
+      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+      次
+    
+    。
+  </div>
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/main/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        if ('.cover') {
+          $('.cover').backstretch(
+          [""],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        } else {
+          $.backstretch(
+          [""],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+    
+      <script src="https://cdn.jsdelivr.net/gh/xaoxuu/volantis@1/js/volantis.min.js"></script>
+    
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var notify = 'false' == true;
+  var verify = 'false' == true;
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    notify: notify,
+    verify: verify,
+    guest_info: guest_info,
+    
+    appId: "6dPaxfKG8a4JqjL2249qbGxi-gzGzoHsz",
+    appKey: "1WaiLl85tDxWJW0A6r6cuuMg",
+    placeholder: "快来评论吧",
+    pageSize:'10',
+    avatar:'mp',
+    lang:'zh-cn',
+    highlight:'false'
+  })
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.19/js/app.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.19/js/search.js"></script>
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "复制成功";
+  let COPY_FAILURE = "复制失败";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>复制</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>
