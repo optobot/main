@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>【转载】浅析自动驾驶技术 | optobotlab</title>
+  
+  
+
+  
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.3/css/all.min.css">
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/main/style.css">
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+</head>
+
+<body>
+  
+  
+  <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/main/' >
+        
+          optobotlab
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/main/"
+                  
+                  
+                  id="main">
+									<i class='fas fa-grin fa-fw'></i>&nbsp;文章
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/main/blog/categories/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="mainblogcategories">
+									<i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="搜索" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/main/"
+                
+                
+                id="main">
+								<i class='fas fa-clock fa-fw'></i>&nbsp;近期文章
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/main/friends/"
+                
+                  rel="nofollow"
+                
+                
+                id="mainfriends">
+								<i class='fas fa-link fa-fw'></i>&nbsp;我的友链
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="https://optobot.github.io"
+                
+                  rel="nofollow"
+                
+                
+                id="https:optobot.github.io">
+								<i class='fas fa-info-circle fa-fw'></i>&nbsp;关于
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/main/2018/12/30/article/2/">
+        【转载】浅析自动驾驶技术
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2018-12-30</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/main/categories/科普文章/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>科普文章</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class='notlink'>
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          <p>少年时代，一部来自美国的电视剧《霹雳游侠》让我产生了一个不切实际的愿望——拥有一<br>部同片中KITT一样，能“说话”、可以自动驾驶的帅车。时光荏苒，路上的私家车渐渐多起来，它们之中也有装配能与人对话的语音操作系统了，但是那些自动驾驶的内容似乎还停留在我的梦中，事实真的如此吗？</p>
+<a id="more"></a>
+<h2 id="自动驾驶到底是什么？"><a href="#自动驾驶到底是什么？" class="headerlink" title="自动驾驶到底是什么？"></a>自动驾驶到底是什么？</h2><p>　　在影视作品中，搭配自动驾驶功能的车大多外形前卫，里面或许还有不少闪烁着各种图像以及天书一样难懂内容的显示屏，它们可以很贴心的“揣测”到车主的心思，救车主于水火之中。好了，让我们停止开脑洞，看看现实中这些自动驾驶系统吧。</p>
+<p><img src="https://img.vim-cn.com/ce/7fb76085efb68a46fa22a132f20505c7ecaafb.webp" alt=""></p>
+<p>　　我们想象中的自动驾驶其实称作无人驾驶即Autonomous vehicles或Self-piloting automobile更为恰当，它是电脑控制车辆行驶的最高级别，其研发时间最早可以追溯至上世纪中叶。如同其他很多事物一样，自动驾驶实际上也有一个技术循序渐进发展的过程。或者说，自动驾驶也需分为不同阶段。</p>
+<p><img src="https://img.vim-cn.com/b5/e1e301237dfabb93fce0df1ec9c1a676042da4.webp" alt=""><br><img src="https://img.vim-cn.com/08/9b8918ef9ebc2b80a5f5ef988954505272006f.webp" alt=""></p>
+<p>　　目前，大部分的科学家、学者以及车企将自动驾驶分为三个阶段，即辅助驾驶阶段、半自动驾驶阶段、全自动驾驶阶段。换句话说，如果您家的爱车配备了诸如自适应巡航、车道保持等功能的话，它就可以被称为是辆具备部分自动驾驶功能的汽车了。</p>
+<p><img src="https://img.vim-cn.com/f0/c2b6bf71716168c971f3742c4d4cf8c3fa84e5.webp" alt=""></p>
+<p>　　影响现阶段自动驾驶技术普及的因素有很多，大体上可以总结为下图所示的6点。其中那些历经多年“考验”的法律法规一方面保护着人们的安全，另一方面，类似1968年维也纳驾驶公约中标注的“必须保证驾驶员全时操控车辆”这样的规则也限制了新技术的推广。</p>
+<p><img src="https://img.vim-cn.com/61/976f04bd540db7f7b36fb1e62f70bc4472920c.webp" alt=""></p>
+<p>　　细心的朋友可能已经发现了，在上面的表格中，有一项社会、公众关注度是阻碍技术普及的因素，对此，相关机构对于德国与中国民众进行了抽样调查，其中反映出的结果与您设想的可能存在不小的区别。</p>
+<p><img src="https://img.vim-cn.com/c7/4fa1e0f5ca273842ff5e0e13369a5d91d49587.webp" alt=""><br><img src="https://img.vim-cn.com/8a/19f842c4e54b6b840d039d07cc8f19b5397b41.webp" alt=""></p>
+<p>　　通过数据我们意外发现，在自动驾驶技术接受程度上，中国民众接受程度远超德国民众，此外，德国民众随着年龄的增长，逐渐增高的不接受比例这种情况也没有出现在中国消费者心中，这显示出了我国民众对于新技术的渴求。</p>
+<h2 id="市面上自动驾驶现在处于何种阶段？"><a href="#市面上自动驾驶现在处于何种阶段？" class="headerlink" title="市面上自动驾驶现在处于何种阶段？"></a>市面上自动驾驶现在处于何种阶段？</h2><p>　　目前市面上大多数品牌的辅助驾驶系统实际上就是自动驾驶的初级阶段，它们大都可以为车主提供重要或有益的驾驶相关信息或提高行车安全，我们看看其中比较有代表性的三个品牌各自发展方向。</p>
+<h3 id="沃尔沃自动驾驶"><a href="#沃尔沃自动驾驶" class="headerlink" title="沃尔沃自动驾驶"></a>沃尔沃自动驾驶</h3><p>　　作为一向将安全作为自己品牌基调的沃尔沃，其很早便在旗下车型上配备了辅助驾驶系统，City Safety这套系统的名字也随着沃尔沃的宣传深入人心。</p>
+<p><img src="https://img.vim-cn.com/3b/89ff3b72c29843e7d7d3a3bdacf58035632e9b.webp" alt=""><br><img src="https://img.vim-cn.com/d2/82b05a0e3c8e7e90d2adde5ba5efb19bafe35d.webp" alt=""><br><img src="https://img.vim-cn.com/59/60ab0a89a8a21b20f6eb32dcb24ec1277d812a.webp" alt=""><br><img src="https://img.vim-cn.com/d8/e21199e4c4b70091f7edb9bd65d05bc443a8fc.webp" alt=""><br><img src="https://img.vim-cn.com/c8/7b72df1c7e87ed6ffdb58814b46c2c317288d3.webp" alt=""><br><img src="https://img.vim-cn.com/8a/726c4476957c9df4b2ca520c1a81b0cc4f6067.webp" alt=""></p>
+<p>　　沃尔沃这个向来标榜安全性的品牌在主动安全技术上一直处于领先地位，这正是自动驾驶技术初级阶段配备的技术，这也令我们更加期待其公布的自动驾驶技术。那么，除了它以外，不同“调性”的品牌自动驾驶技术研发的成果如何呢？</p>
+<h3 id="宝马自动驾驶"><a href="#宝马自动驾驶" class="headerlink" title="宝马自动驾驶"></a>宝马自动驾驶</h3><p>　　与沃尔沃不同，宝马品牌的性格特点与操控二字始终脱离不了关系，正如前人说过的，跑的快不难，难的是停下来，在自动驾驶领域，宝马一直也没闲着。</p>
+<p><img src="https://img.vim-cn.com/8c/0279148341a8d6f45565c8848042638e2ca06b.webp" alt=""><br><img src="https://img.vim-cn.com/45/1a829accf366eecbdcf27ba66b923ebb309d49.webp" alt=""><br><img src="https://img.vim-cn.com/ea/3fccab91cb2c8429fa1ac278d1fe4545527755.webp" alt=""><br><img src="https://img.vim-cn.com/59/caa9475b3596ad1f739415d9b3b07827f21ad7.webp" alt=""><br><img src="https://img.vim-cn.com/6b/15935ebede9ab6d0aab249da570b3ce999dd06.webp" alt=""></p>
+<h3 id="丰田"><a href="#丰田" class="headerlink" title="丰田"></a>丰田</h3><p>　　作为亚洲车企，丰田品牌的基调似乎与欧洲、美国车企都不同，追求均衡、中庸是此前丰田留给人的印象，在自动驾驶方面，其走出的路也与前面提到的两个品牌截然不同。</p>
+<p>　　首先，2014年，丰田在日本本土公布了其研发的主动安全技术套装，这套名为TSA（Toyota Safety Sense）的系统包含了全新全景模式影像监测系统、自适应远光灯控制系统、第二代智能停车辅助系统等诸多主动安全技术。　</p>
+<p><img src="https://img.vim-cn.com/80/06d73dcf8f5f8bbbb3307ad40adcade8b138d1.webp" alt=""></p>
+<p>　　除了这部分已经公开即将搭载新车型的技术，丰田还有一些秘密武器，这就是名为ITS（Intelligent Transport System）的智能交通系统。它的特殊之处在于通过地面设备、车辆对其他车辆和行人的探测和信号通信，对驾驶者进行有效提示，从而实现预防碰撞，提升交通安全性的目的。</p>
+<p><img src="https://img.vim-cn.com/6a/43880d81de8e12560f90ecd4de36cb13944ab9.webp" alt=""><br><img src="https://img.vim-cn.com/4c/bfeadefacb4f17f91aff3460574407d12c3b30.webp" alt=""></p>
+<h2 id="日产自动紧急避让系统"><a href="#日产自动紧急避让系统" class="headerlink" title="日产自动紧急避让系统"></a>日产自动紧急避让系统</h2><p>　　品完了上面的“各式大餐”后，让我们来个“饭后甜点”吧。相比那些功能多样的自动驾驶系统，日产这套名为自动紧急避让的系统似乎更实用。它可以有效应对城市中愈发复杂的交通状况，当有行人突然进入车道后，系统可以自行判断情况并操作进行避让，只是如果碰到单向行车道的情况，这套系统如何应对，有待观察。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>　　如同其他很多新鲜事物诞生、推广、普及的过程一样，自动驾驶也正在经历这样的阵痛期。在技术上，核心部件的运算能力以及成本过高并不是阻碍其推广的最大问题，传统关键的束缚、法律法规的约束、行业间的利益关系等等方面均制约着它的推广。自动驾驶真正走进我们的生活还有很长的路要走。</p>
+<hr>
+<p>作者：智享汽车圈</p>
+<p>原文：<a href="https://mp.weixin.qq.com/s/yCHBY2W-_1jEMPU9kgDwyA" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/yCHBY2W-_1jEMPU9kgDwyA</a></p>
+
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <hr>
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-08-14T16:34:31+08:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>最后更新于 2019年8月14日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://optobot.github.io/main/2018/12/30/article/2/&title=【转载】浅析自动驾驶技术 | optobotlab&summary=少年时代，一部来自美国的电视剧《霹雳游侠》让我产生了一个不切实际的愿望——拥有一部同片中KITT一样，能“说话”、可以自动驾驶的帅车。时光荏苒，路上的私家车渐渐多起来，它们之中也有装配能与人对话的语音操作系统了，但是那些自动驾驶的内容似乎还停留在我的梦中，事实真的如此吗？"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://optobot.github.io/main/2018/12/30/article/2/&title=【转载】浅析自动驾驶技术 | optobotlab&summary=少年时代，一部来自美国的电视剧《霹雳游侠》让我产生了一个不切实际的愿望——拥有一部同片中KITT一样，能“说话”、可以自动驾驶的帅车。时光荏苒，路上的私家车渐渐多起来，它们之中也有装配能与人对话的语音操作系统了，但是那些自动驾驶的内容似乎还停留在我的梦中，事实真的如此吗？"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://optobot.github.io/main/2018/12/30/article/2/&title=【转载】浅析自动驾驶技术 | optobotlab&summary=少年时代，一部来自美国的电视剧《霹雳游侠》让我产生了一个不切实际的愿望——拥有一部同片中KITT一样，能“说话”、可以自动驾驶的帅车。时光荏苒，路上的私家车渐渐多起来，它们之中也有装配能与人对话的语音操作系统了，但是那些自动驾驶的内容似乎还停留在我的梦中，事实真的如此吗？"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+            <div class="prev-next">
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/main/2018/12/30/article/3/" rel="prev" title="【转载】自动驾驶 vs 机器人环境感知">
+                                    
+                                        【转载】自动驾驶 vs 机器人环境感知
+                                    
+                                </a>
+                            </h4>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '【转载】浅析自动驾驶技术',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+        
+          
+          
+            <section class='widget author'>
+  <div class='content pure'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='https://img.vim-cn.com/b8/9c28737de114493b9cc4286dbbf743c7fc3b4a.jpg'/>
+      </div>
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目录</div>
+  
+    <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#自动驾驶到底是什么？"><span class="toc-text">自动驾驶到底是什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#市面上自动驾驶现在处于何种阶段？"><span class="toc-text">市面上自动驾驶现在处于何种阶段？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#沃尔沃自动驾驶"><span class="toc-text">沃尔沃自动驾驶</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#宝马自动驾驶"><span class="toc-text">宝马自动驾驶</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#丰田"><span class="toc-text">丰田</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#日产自动紧急避让系统"><span class="toc-text">日产自动紧急避让系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            <section class='widget grid'>
+  
+<header class='pure'>
+  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;导航</div>
+  
+</header>
+
+  <div class='content pure'>
+    <ul class="grid navgation">
+      
+        <li><a class="flat-box" title="/main/" href="/main/"
+          
+          
+          id="main">
+          
+            <i class="fas fa-clock fa-fw" aria-hidden="true"></i>
+          
+          近期文章
+        </a></li>
+      
+        <li><a class="flat-box" title="/main/friends/" href="/main/friends/"
+          
+            rel="nofollow"
+          
+          
+          id="mainfriends">
+          
+            <i class="fas fa-link fa-fw" aria-hidden="true"></i>
+          
+          我的友链
+        </a></li>
+      
+        <li><a class="flat-box" title="https://optobot.github.io" href="https://optobot.github.io"
+          
+            rel="nofollow"
+          
+          
+          id="https:optobot.github.io">
+          
+            <i class="fas fa-info-circle fa-fw" aria-hidden="true"></i>
+          
+          关于
+        </a></li>
+      
+    </ul>
+  </div>
+</section>
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget category'>
+    
+<header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章分类</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/main/blog/categories/"
+    title="blog/categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/main/categories/科普文章/" href="/main/categories/科普文章/"><div class='name'>科普文章</div><div class='badge'>(3)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+
+          
+        
+      
+        
+          
+          
+            
+
+
+
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+    <div class="footer">
+      <p>Copyright &copy; 2019<a href="https://optobot.github.io/">optobotlab</a></p>
+
+    </div>
+    <br>
+  
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/main/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        if ('.cover') {
+          $('.cover').backstretch(
+          [""],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        } else {
+          $.backstretch(
+          [""],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+    
+      <script src="https://cdn.jsdelivr.net/gh/xaoxuu/volantis@1/js/volantis.min.js"></script>
+    
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var notify = 'false' == true;
+  var verify = 'false' == true;
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    notify: notify,
+    verify: verify,
+    guest_info: guest_info,
+    
+    appId: "6dPaxfKG8a4JqjL2249qbGxi-gzGzoHsz",
+    appKey: "1WaiLl85tDxWJW0A6r6cuuMg",
+    placeholder: "快来评论吧",
+    pageSize:'10',
+    avatar:'mp',
+    lang:'zh-cn',
+    highlight:'false'
+  })
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.19/js/app.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.19/js/search.js"></script>
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "复制成功";
+  let COPY_FAILURE = "复制失败";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>复制</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>

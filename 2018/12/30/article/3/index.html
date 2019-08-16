@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>【转载】自动驾驶 vs 机器人环境感知 | optobotlab</title>
+  
+  
+
+  
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.3/css/all.min.css">
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/main/style.css">
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+</head>
+
+<body>
+  
+  
+  <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/main/' >
+        
+          optobotlab
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/main/"
+                  
+                  
+                  id="main">
+									<i class='fas fa-grin fa-fw'></i>&nbsp;文章
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/main/blog/categories/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="mainblogcategories">
+									<i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="搜索" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/main/"
+                
+                
+                id="main">
+								<i class='fas fa-clock fa-fw'></i>&nbsp;近期文章
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/main/friends/"
+                
+                  rel="nofollow"
+                
+                
+                id="mainfriends">
+								<i class='fas fa-link fa-fw'></i>&nbsp;我的友链
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="https://optobot.github.io"
+                
+                  rel="nofollow"
+                
+                
+                id="https:optobot.github.io">
+								<i class='fas fa-info-circle fa-fw'></i>&nbsp;关于
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/main/2018/12/30/article/3/">
+        【转载】自动驾驶 vs 机器人环境感知
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2018-12-30</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/main/categories/科普文章/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>科普文章</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class='notlink'>
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          <p><img src="https://img.vim-cn.com/38/34e2aa149e195943174c902ac2b86e2b5ed911.webp" alt=""></p>
+<a id="more"></a>
+<p>自动驾驶和机器人共同的三大关键技术为：</p>
+<p><img src="https://img.vim-cn.com/c2/de3a2b6a2817c9446edc255f7558817651cc60.webp" alt=""></p>
+<p>环境感知是其中最重要、最基础的一环。</p>
+<p><img src="https://img.vim-cn.com/bd/1863696dedb0d3d0de6cb9f31e78483d597f81.webp" alt=""></p>
+<p>自动驾驶和机器人主要通过传感器来获取周围环境信息，同时也会通过高精度地图和IoT技术来扩展环境感知能力。</p>
+<p><img src="https://img.vim-cn.com/a3/d30c619cb7714aa1c8a014ea2ede1657797a28.webp" alt=""></p>
+<p>下面我们来了解一下每类传感器的特性，以及在机器人和自动驾驶汽车中的使用差异。</p>
+<h2 id="一、-摄像头"><a href="#一、-摄像头" class="headerlink" title="一、 摄像头"></a>一、 摄像头</h2><p>摄像头是机器人或自动驾驶汽车的眼睛，分类如下：</p>
+<p><img src="https://img.vim-cn.com/d2/78fdd728f56ccb7d8fee1324955d9ca1de29a8.webp" alt=""></p>
+<h3 id="1-普通单目摄像头"><a href="#1-普通单目摄像头" class="headerlink" title="1. 普通单目摄像头"></a>1. 普通单目摄像头</h3><p>通过图像匹配进行目标识别，再通过目标在图像中的大小去估算目标距离，准确识别是准确估算距离的第一步。</p>
+<p><img src="https://img.vim-cn.com/73/48114d3e30352b5afa0f3cf8698455a8e5cb33.webp" alt=""><br><img src="https://img.vim-cn.com/78/17370f5c03a6c4edc4081fb5bcda02ab38148f.webp" alt=""></p>
+<h3 id="2-单目结构光深度摄像头"><a href="#2-单目结构光深度摄像头" class="headerlink" title="2. 单目结构光深度摄像头"></a>2. 单目结构光深度摄像头</h3><p>由一个RGB摄像头、结构光投射器(红外)和结构光深度感应器(CMOS)组成，通过投影一个预先设计好的图案作为参考图像(编码光源)，将结构光投射至物体表面，再通过深度感应器接收该物体表面反射的结构光图案。</p>
+<p>这样，同样获得了两幅图像，一幅是预先设计的参考图像，另一幅是相机获取的物体表面反射的结构光图案。</p>
+<p>由于接收图案会因物体的立体形状而发生变形，因此可以通过该图案在摄像机上的位置和形变程度来计算物体表面的空间信息。<br><img src="https://img.vim-cn.com/8d/74296b0f8f6cf67cebe210c52b5f320e2a33c6.webp" alt="单目结构光 Kinect一代" title="单目结构光 Kinect一代"></p>
+<center><font face="黑体">单目结构光 Kinect一代<font></font></font></center>
+
+<p>同样是进行图像匹配，这种方法与双目匹配比较好处在于，参考图像不是获取的，而是经过专门设计的图案，因此特征点是已知的，而且更容易从测试图像中提取。</p>
+<h3 id="3-双目深度摄像头"><a href="#3-双目深度摄像头" class="headerlink" title="3. 双目深度摄像头"></a>3. 双目深度摄像头</h3><p>双目摄像头的测距方式则是通过对图像视差进行计算，直接对前方景物进行距离测量。双目摄像头的原理与人眼相似，人眼能够感知物体的远近，是由于两只眼睛对同一个物体呈现的图像存在差异，也称“视差”。</p>
+<p>物体距离越远，视差越小，反之视差越大。视差的大小对应着物体与眼睛之间距离的远近，这也是3D电影能够使人有立体层次感知的原因。</p>
+<p><img src="https://img.vim-cn.com/d6/48c179142d29637de530b8febdda2e26c8f5d6.webp" alt=""></p>
+<p><strong>优点</strong></p>
+<p>1） 双目系统成本比单目系统要高，但尚处于可接受范围内，并且与激光雷达等方案相比成本较低。</p>
+<p>2） 没有识别率的限制，因为从原理上无需先进行识别再进行测算，而是对所有障碍物直接进行测量。</p>
+<p>3） 精度比单目高，直接利用视差计算距离。</p>
+<p>4） 无需维护样本数据库，因为双目没有样本的概念。</p>
+<p><strong>难点</strong></p>
+<p>1） 计算量大，对计算单元的性能要求非常高，这使得双目系统的产品化、小型化的难度较大。</p>
+<p>2） 匹配，双目匹配采用三角测量原理，完全基于图像处理技术，通过寻找两个图像中相同的特征点得到匹配点，从而得到深度值。</p>
+<p>双目测距中光源是环境光或者白光这种没有经过编码的光源，图像识别完全取决于被拍摄的物体本身的特征点，对表面颜色和纹理特征不明显的物体失效，匹配的精度和正确性很难保证，因此出现了结构光技术来解决匹配问题。</p>
+<p>因为结构光光源带有很多特征点或者编码，因此提供了很多的匹配角点或者直接的码字，可以很方便的进行特征点的匹配。</p>
+<h3 id="4-TOF深度摄像头"><a href="#4-TOF深度摄像头" class="headerlink" title="4. TOF深度摄像头"></a>4. TOF深度摄像头</h3><p>TOF是Time of flight的简写，直译为飞行时间的意思。</p>
+<p>所谓飞行时间法3D成像，是通过给目标连续发送光脉冲，然后用传感器接收从物体返回的光，通过探测光脉冲的飞行（往返）时间来得到目标物体的距离。这种技术跟3D激光传感器原理基本类似，只不过3D激光传感器是逐点扫描，而TOF相机则是同时得到整幅图像的深度信息。</p>
+<p>TOF相机与普通机器视觉成像过程也有类似之处，都是由光源、光学部件、传感器、控制电路以及处理电路等几部单元组成。<br><img src="https://img.vim-cn.com/5f/fb40477fc86661cf5706f81c6cfcd2d5340e6b.webp" alt="单目TOF Kinect二代" title="单目TOF Kinect二代"></p>
+<center><font face="黑体">单目TOF Kinect二代<font></font></font></center>
+
+<p>各种摄像头性能和成本比较：</p>
+<p><img src="https://img.vim-cn.com/26/9425b64009c0bea9784f01f979a83a2877a3bb.webp" alt=""></p>
+<p>由上表对比可知，无论是结构光还是TOF方案，都需要增加主动光，因此，其检测距离受到了光强度的限制，无法适用于远距离的检测，一般只用于机器人的感知，而普通单目和双目摄像头除了在机器人上应用，还可以用于ADAS和自动驾驶汽车上。</p>
+<h2 id="二、激光雷达"><a href="#二、激光雷达" class="headerlink" title="二、激光雷达"></a>二、激光雷达</h2><p>激光雷达以激光作为信号源，由激光器发射出的脉冲激光，打到对面物体上，引起散射，一部分光波会反射到激光雷达的接收器上，根据激光测距原理计算，就得到从激光雷达到目标点的距离，脉冲激光不断地扫描目标物，就可以得到目标物上全部目标点的数据，用此数据进行成像处理后，即可得到精确的目标物体图像。</p>
+<p><img src="https://img.vim-cn.com/56/bb48cd9e427b8fdcf353e0c09d7729de3f057a.webp" alt=""></p>
+<p>激光雷达分为单线和多线，常见的多线激光雷达有4线，8线，16线，32线和64线。</p>
+<ul>
+<li>单线激光雷达扫描的区域可以简单定义为一个平面，是一个二维扫描方案</li>
+<li>4线、8线雷达纵向扫描范围从3.2°到6.4°，这个范围不能称为一个3D的扫描，一般定义为2.5D扫描方案。</li>
+<li>64线雷达扫描的整个范围面就比较大，纵向甚至可以一直到30多度，讲究对整个环境、3D的点云数据收集，单位时间内收集到的反馈点数多，数据量大。<br><img src="https://img.vim-cn.com/33/5c74db724f2b5946ba862c7e371b9ad6bdaf00.webp" alt="SICK单线激光雷达" title="SICK单线激光雷达"><center><font face="黑体">SICK单线激光雷达<font></font></font></center>
+
+</li>
+</ul>
+<p><img src="https://img.vim-cn.com/c3/604e969c08a8eb012e5a636e0be46f85e38376.webp" alt="单线二维激光雷达扫描图" title="单线二维激光雷达扫描图"></p>
+<center><font face="黑体">单线二维激光雷达扫描图<font></font></font></center>
+
+<p><img src="https://img.vim-cn.com/aa/edbf6b0e5b051601f045ee109ac6bbf4f33b1a.webp" alt="Velodyne多线激光雷达" title="Velodyne多线激光雷达"></p>
+<center><font face="黑体">Velodyne多线激光雷达<font></font></font></center>
+
+<p><img src="https://img.vim-cn.com/7a/7c1d0bb7e0d6a5064ac793745f740ed6c7a544.webp" alt="64线三维激光雷达扫描图" title="64线三维激光雷达扫描图"></p>
+<center><font face="黑体">64线三维激光雷达扫描图<font></font></font></center>
+
+<p>激光雷达普遍用于定位、障碍物检测、物体分类、动态物体跟踪等应用，在机器人和自动驾驶汽车上都有使用。</p>
+<ul>
+<li>由于机器人的工作环境相对来说比较简单，而且迫于成本压力，一般采用单线激光雷达，用于定位和检测周边障碍物。</li>
+<li>自动驾驶汽车一般采用32线或64线的三维激光雷达置于车顶，完成对车辆四周较远物体的检测分类和跟踪。另外，在车灯或者保险杠附近的位置还需要安装4线和8线激光雷达，主要对车顶三维激光雷达进行补盲，对近距离的车辆、行人以及地线、马路牙、路肩、路栏等进行识别。</li>
+</ul>
+<p><strong>缺点</strong></p>
+<p>激光雷达容易受到大气条件以及工作环境的烟尘的影响，要实现全天候的工作环境是非常困难的事情。</p>
+<h2 id="三、毫米波雷达"><a href="#三、毫米波雷达" class="headerlink" title="三、毫米波雷达"></a>三、毫米波雷达</h2><p>毫米波是指波长在 1-10mm 之间的电磁波,换算成频率后,毫米波的频率位于30-300GHz 之间。</p>
+<p>毫米波的波长介于厘米波和光波之间,因此毫米波兼有微波制导和光电制导的优点:</p>
+<ol>
+<li><p>同厘米波导引头相比, 毫米波导引头具有体积小、质量轻和空间分辨率高的特点。</p>
+</li>
+<li><p>与红外、激光等光学导引头相比, 毫米波导引头穿透雾、烟、灰尘的能力强,传输距离远,具有全天候全天时的特点，在雨天、大雪天气下，毫米波雷达是非常不错的选择。</p>
+</li>
+<li><p>性能稳定,不受目标物体形状、颜色等干扰。 毫米波雷达很好的弥补了如红外、激光、超声波、摄像头等其它传感器在车载应用中所不具备的使用场景。</p>
+</li>
+</ol>
+<p>目前车载雷达的频率主要分为24GHz频段和77GHz频段，其中77GHz频段代表着未来的趋势，这是国际电信联盟专门划分给车用雷达的频段。</p>
+<p>严格来说77GHz的雷达才属于毫米波雷达，但是实际上24GHz的雷达也被称为毫米波雷达。</p>
+<p><img src="https://img.vim-cn.com/2a/e41823c07a12fd6022466eb44a91275c918da3.webp" alt=""></p>
+<p>毫米波雷达在测量目标的距离、速度和角度上展现的性能和其它传感器还是略有区别的。</p>
+<ul>
+<li>视觉传感器得到的是二维信息，没有深度信息，而毫米波雷达则是具备深度信息的，可以提供目标的距离。</li>
+<li>激光雷达对于速度并不敏感，而毫米波雷达则对速度非常敏感，可以直接获得目标的速度，因为毫米波雷达会有很明显的多普勒效应，通过检测其多普勒频移可将目标的速度提取出来。</li>
+<li>毫米波雷达最基本的探测技术是使用FMCW连续线性调频波去探测前方物体的距离，毫米波雷达发射的是连续波，在后端处理上要比激光雷达的运算量大。</li>
+</ul>
+<p>毫米波雷达在ADAS领域是很难被取代的传感器，虽然有一些缺点，但是是唯一的全天候工作的传感器。</p>
+<p>其测速、测距的精度要远高于视觉，与激光雷达相比，其测速精度会高一些，穿透力会更好。</p>
+<p>而对于机器人的应用场景，利用毫米波雷达来探测障碍物，显得有点奢侈了，一般采用更低成本的超声波雷达来替代，但对于一些特殊应用场景的机器人（譬如消防，大型物流），由于需要在复杂环境下支持全天候、全天时作业，就必须采用毫米波雷达来实现避障。</p>
+<h2 id="四、超声波雷达"><a href="#四、超声波雷达" class="headerlink" title="四、超声波雷达"></a>四、超声波雷达</h2><p>超声波雷达是利用传感器内的超声波发生器产生 40KHz的超声波,再由接收探头接收经障碍物反射回来的超声波,根据超声波反射接收的时间差计算与障碍物之间的距离。</p>
+<p>超声波雷达成本较低,探测距离近，精度高,且不受光线条件的影响,因此常用于泊车系统中。</p>
+<p><img src="https://img.vim-cn.com/53/0e979bd6c00b0ce31add586e84abea766281dd.webp" alt=""></p>
+<p>超声波最大的缺点就是检测角度太小，一辆车需要在不同角度安装好几个，除此以外，都比上面几种方案更好。</p>
+<p><strong>优点</strong></p>
+<ul>
+<li>防水，防尘，少量的泥沙遮挡也无妨</li>
+<li>有金属材质的探头，可以与车体外壳结合的很好</li>
+<li>通常适合3m内的检测，由于其空气损耗大，检测角度又小，因此车辆之间的干扰较小</li>
+<li>最小的监测距离可达到0.1-0.3m</li>
+<li>成本不高</li>
+</ul>
+<p>对于较常见的40KHz超声波传感器，其测距精度大约是1~3cm左右（取决于后端电路和数据处理性能），这个范围也能满足倒车雷达的要求，所以在倒车雷达的各个方案中，超声波是最容易被用户接受的。</p>
+<p>另外，超声波雷达由于成本低，检测距离适中，因此在机器人的避障中应用也很广。汽车相对于绝大部分室内应用的机器人来说，对防护等级要求较高，因此，汽车上用的都是高防护等级的收发一体化的超声波雷达。</p>
+<h2 id="五、红外"><a href="#五、红外" class="headerlink" title="五、红外"></a>五、红外</h2><p>红外线的工作原理是利用高频调制的红外线在待测距离上往返产生的相位移推算出光束度越时间△t，从而根据D＝C△t/2得到距离D。红外传感器的测距基本原理为发光管发出红外光，光敏接收管接收前方物体反射光，据此判断前方是否有障碍物。根据发射光的强弱可以判断物体的距离，它的原理是接收管接收的光强随反射物体的距离而变化的，距离近则反射光强，距离远则反射光弱。 </p>
+<p>目前，使用较多的一种传感器红外光电开关，它的发射频率一般为38 kHz左右，探测距离一般比较短，通常被用作近距离障碍目标的识别。红外只适合短距离测距，因此基本上只用于低速移动的机器人上防碰撞。</p>
+<p><img src="https://img.vim-cn.com/fa/9b4133f7c6f1207afa189af0389296ffab1895.png" alt=""></p>
+<p>各种传感器的技术指标对比：</p>
+<p><img src="https://img.vim-cn.com/d2/651b2246fc872a3e4834b374452a5a2748b07f.webp" alt=""></p>
+<h2 id="六、IMU"><a href="#六、IMU" class="headerlink" title="六、IMU"></a>六、IMU</h2><p>IMU（惯性测量单元）是测量物体三轴姿态角(或角速率)以及加速度的装置。一般一个IMU包含三个单轴的加速度计和三个单轴的陀螺，加速度计检测物体在载体坐标系统独立三轴的加速度信号，而陀螺检测载体相对于导航坐标系的角速度信号，测量物体在三维空间中的角速度和加速度，并以此计算出物体的姿态。</p>
+<p><img src="https://img.vim-cn.com/68/2c5d5ea14d450d813edfd2600de7c73ccc3d32.jpg" alt=""></p>
+<p>惯性传感器的定位误差会随着运行时间增长，但由于其是高频传感器，在短时间内可以提供稳定的实时位置更新。IMU大多用在需要进行运动控制的设备，如汽车和机器人上，在导航中有着很重要的应用价值。</p>
+<h2 id="七、GPS"><a href="#七、GPS" class="headerlink" title="七、GPS"></a>七、GPS</h2><p>GPS由GPS接收机和卫星天线组成，主要通过卫星来计算我们当前的位置和速度。通过测量从卫星上接收信号的时间，设备能够实现精确度大约在10m左右的定位。</p>
+<p>一个略为改进过的定位系统上线了，我们可以把它称为差分全球定位系统(DGPS)，因为使用了地面基准站的关系，这个系统的精确度被提升到了1m。但这个精度对机器人和自动驾驶汽车的使用场景来说，都是不够的。因此，GPS一般需要融合IMU实现厘米级的定位。</p>
+<p>另外，由于室内无法接收到GPS信号，因此，对于室内机器人则无法使用GPS进行定位</p>
+<h2 id="八、信息交互"><a href="#八、信息交互" class="headerlink" title="八、信息交互"></a>八、信息交互</h2><p>对于自动驾驶汽车来说，还有一类技术虽然不是主动式的探测元件，但是属于协同式的全局数据辅助，可以扩展智能车的环境感知能力，在感知层同样扮演着不可或缺的角色，包括高精度地图、V2X车联网技术。每种类型的感知技术都有自己的优势和弊端，它们相互补充融合，最终使智能车达到驾驶场景下非常高的安全性要求。</p>
+<h2 id="九、结语"><a href="#九、结语" class="headerlink" title="九、结语"></a>九、结语</h2><p>传感器是机器人和自动驾驶汽车环境感知的基础，对于各个传感器采集的数据还需要算法来处理，这样才能进行自身的定位和环境障碍的识别，因此，单个传感器数据的处理以及多传感器数据融合的算法非常关键，后续我们将进行算法部分的详细介绍。</p>
+<hr>
+<p>作者：智享汽车圈</p>
+<p>原文：<a href="https://mp.weixin.qq.com/s/px5z_q5bfwT8_R4_O9aSUg" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/px5z_q5bfwT8_R4_O9aSUg</a></p>
+
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <hr>
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-08-14T17:11:46+08:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>最后更新于 2019年8月14日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://optobot.github.io/main/2018/12/30/article/3/&title=【转载】自动驾驶 vs 机器人环境感知 | optobotlab&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://optobot.github.io/main/2018/12/30/article/3/&title=【转载】自动驾驶 vs 机器人环境感知 | optobotlab&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://optobot.github.io/main/2018/12/30/article/3/&title=【转载】自动驾驶 vs 机器人环境感知 | optobotlab&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+            <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
+                            <h4>
+                                <a href="/main/2018/12/30/article/2/" rel="prev" title="【转载】浅析自动驾驶技术">
+                                  
+                                      【转载】浅析自动驾驶技术
+                                  
+                                </a>
+                            </h4>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/main/2018/12/30/article/1/" rel="prev" title="【转载】基于深度学习的目标检测发展综述">
+                                    
+                                        【转载】基于深度学习的目标检测发展综述
+                                    
+                                </a>
+                            </h4>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '【转载】自动驾驶 vs 机器人环境感知',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+        
+          
+          
+            <section class='widget author'>
+  <div class='content pure'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='https://img.vim-cn.com/b8/9c28737de114493b9cc4286dbbf743c7fc3b4a.jpg'/>
+      </div>
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目录</div>
+  
+    <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、-摄像头"><span class="toc-text">一、 摄像头</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-普通单目摄像头"><span class="toc-text">1. 普通单目摄像头</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-单目结构光深度摄像头"><span class="toc-text">2. 单目结构光深度摄像头</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-双目深度摄像头"><span class="toc-text">3. 双目深度摄像头</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-TOF深度摄像头"><span class="toc-text">4. TOF深度摄像头</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、激光雷达"><span class="toc-text">二、激光雷达</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、毫米波雷达"><span class="toc-text">三、毫米波雷达</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、超声波雷达"><span class="toc-text">四、超声波雷达</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、红外"><span class="toc-text">五、红外</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六、IMU"><span class="toc-text">六、IMU</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#七、GPS"><span class="toc-text">七、GPS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#八、信息交互"><span class="toc-text">八、信息交互</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#九、结语"><span class="toc-text">九、结语</span></a></li></ol>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            <section class='widget grid'>
+  
+<header class='pure'>
+  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;导航</div>
+  
+</header>
+
+  <div class='content pure'>
+    <ul class="grid navgation">
+      
+        <li><a class="flat-box" title="/main/" href="/main/"
+          
+          
+          id="main">
+          
+            <i class="fas fa-clock fa-fw" aria-hidden="true"></i>
+          
+          近期文章
+        </a></li>
+      
+        <li><a class="flat-box" title="/main/friends/" href="/main/friends/"
+          
+            rel="nofollow"
+          
+          
+          id="mainfriends">
+          
+            <i class="fas fa-link fa-fw" aria-hidden="true"></i>
+          
+          我的友链
+        </a></li>
+      
+        <li><a class="flat-box" title="https://optobot.github.io" href="https://optobot.github.io"
+          
+            rel="nofollow"
+          
+          
+          id="https:optobot.github.io">
+          
+            <i class="fas fa-info-circle fa-fw" aria-hidden="true"></i>
+          
+          关于
+        </a></li>
+      
+    </ul>
+  </div>
+</section>
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget category'>
+    
+<header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章分类</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/main/blog/categories/"
+    title="blog/categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/main/categories/科普文章/" href="/main/categories/科普文章/"><div class='name'>科普文章</div><div class='badge'>(3)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+
+          
+        
+      
+        
+          
+          
+            
+
+
+
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+    <div class="footer">
+      <p>Copyright &copy; 2019<a href="https://optobot.github.io/">optobotlab</a></p>
+
+    </div>
+    <br>
+  
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/main/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        if ('.cover') {
+          $('.cover').backstretch(
+          [""],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        } else {
+          $.backstretch(
+          [""],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+    
+      <script src="https://cdn.jsdelivr.net/gh/xaoxuu/volantis@1/js/volantis.min.js"></script>
+    
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var notify = 'false' == true;
+  var verify = 'false' == true;
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    notify: notify,
+    verify: verify,
+    guest_info: guest_info,
+    
+    appId: "6dPaxfKG8a4JqjL2249qbGxi-gzGzoHsz",
+    appKey: "1WaiLl85tDxWJW0A6r6cuuMg",
+    placeholder: "快来评论吧",
+    pageSize:'10',
+    avatar:'mp',
+    lang:'zh-cn',
+    highlight:'false'
+  })
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.19/js/app.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.19/js/search.js"></script>
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "复制成功";
+  let COPY_FAILURE = "复制失败";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>复制</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>
