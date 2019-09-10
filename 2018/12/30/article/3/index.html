@@ -250,25 +250,25 @@
           <p><img src="https://i.loli.net/2019/09/10/nYzmA3obG5QRsBk.png" alt=""></p>
 <a id="more"></a>
 <p>自动驾驶和机器人共同的三大关键技术为：</p>
-<p><img src="https://img.vim-cn.com/c2/de3a2b6a2817c9446edc255f7558817651cc60.webp" alt=""></p>
+<p><img src="https://i.loli.net/2019/09/10/Ip2SCHg4mtMrPWO.png" alt=""></p>
 <p>环境感知是其中最重要、最基础的一环。</p>
-<p><img src="https://img.vim-cn.com/bd/1863696dedb0d3d0de6cb9f31e78483d597f81.webp" alt=""></p>
+<p><img src="https://i.loli.net/2019/09/10/wIs8VUxaj4tb9Rv.png" alt=""></p>
 <p>自动驾驶和机器人主要通过传感器来获取周围环境信息，同时也会通过高精度地图和IoT技术来扩展环境感知能力。</p>
-<p><img src="https://img.vim-cn.com/a3/d30c619cb7714aa1c8a014ea2ede1657797a28.webp" alt=""></p>
+<p><img src="https://i.loli.net/2019/09/10/fyhlki5HbAV8TtR.png" alt=""></p>
 <p>下面我们来了解一下每类传感器的特性，以及在机器人和自动驾驶汽车中的使用差异。</p>
 <h2 id="一、-摄像头"><a href="#一、-摄像头" class="headerlink" title="一、 摄像头"></a>一、 摄像头</h2><p>摄像头是机器人或自动驾驶汽车的眼睛，分类如下：</p>
-<p><img src="https://img.vim-cn.com/d2/78fdd728f56ccb7d8fee1324955d9ca1de29a8.webp" alt=""></p>
+<p><img src="https://i.loli.net/2019/09/10/EHNirqavgJOcQCF.png" alt=""></p>
 <h3 id="1-普通单目摄像头"><a href="#1-普通单目摄像头" class="headerlink" title="1. 普通单目摄像头"></a>1. 普通单目摄像头</h3><p>通过图像匹配进行目标识别，再通过目标在图像中的大小去估算目标距离，准确识别是准确估算距离的第一步。</p>
-<p><img src="https://img.vim-cn.com/73/48114d3e30352b5afa0f3cf8698455a8e5cb33.webp" alt=""><br><img src="https://img.vim-cn.com/78/17370f5c03a6c4edc4081fb5bcda02ab38148f.webp" alt=""></p>
+<p><img src="https://i.loli.net/2019/09/10/27HVWahjOw8moSy.png" alt=""><br><img src="https://i.loli.net/2019/09/10/rt2Fvwaecm4iofk.png" alt=""></p>
 <h3 id="2-单目结构光深度摄像头"><a href="#2-单目结构光深度摄像头" class="headerlink" title="2. 单目结构光深度摄像头"></a>2. 单目结构光深度摄像头</h3><p>由一个RGB摄像头、结构光投射器(红外)和结构光深度感应器(CMOS)组成，通过投影一个预先设计好的图案作为参考图像(编码光源)，将结构光投射至物体表面，再通过深度感应器接收该物体表面反射的结构光图案。</p>
 <p>这样，同样获得了两幅图像，一幅是预先设计的参考图像，另一幅是相机获取的物体表面反射的结构光图案。</p>
-<p>由于接收图案会因物体的立体形状而发生变形，因此可以通过该图案在摄像机上的位置和形变程度来计算物体表面的空间信息。<br><img src="https://img.vim-cn.com/8d/74296b0f8f6cf67cebe210c52b5f320e2a33c6.webp" alt="单目结构光 Kinect一代" title="单目结构光 Kinect一代"></p>
+<p>由于接收图案会因物体的立体形状而发生变形，因此可以通过该图案在摄像机上的位置和形变程度来计算物体表面的空间信息。<br><img src="https://i.loli.net/2019/09/10/YZktJL7aBImnNb9.png" alt="单目结构光 Kinect一代" title="单目结构光 Kinect一代"></p>
 <center><font face="黑体">单目结构光 Kinect一代<font></font></font></center>
 
 <p>同样是进行图像匹配，这种方法与双目匹配比较好处在于，参考图像不是获取的，而是经过专门设计的图案，因此特征点是已知的，而且更容易从测试图像中提取。</p>
 <h3 id="3-双目深度摄像头"><a href="#3-双目深度摄像头" class="headerlink" title="3. 双目深度摄像头"></a>3. 双目深度摄像头</h3><p>双目摄像头的测距方式则是通过对图像视差进行计算，直接对前方景物进行距离测量。双目摄像头的原理与人眼相似，人眼能够感知物体的远近，是由于两只眼睛对同一个物体呈现的图像存在差异，也称“视差”。</p>
 <p>物体距离越远，视差越小，反之视差越大。视差的大小对应着物体与眼睛之间距离的远近，这也是3D电影能够使人有立体层次感知的原因。</p>
-<p><img src="https://img.vim-cn.com/d6/48c179142d29637de530b8febdda2e26c8f5d6.webp" alt=""></p>
+<p><img src="https://i.loli.net/2019/09/10/5VTOSZjflezI4uY.png" alt=""></p>
 <p><strong>优点</strong></p>
 <p>1） 双目系统成本比单目系统要高，但尚处于可接受范围内，并且与激光雷达等方案相比成本较低。</p>
 <p>2） 没有识别率的限制，因为从原理上无需先进行识别再进行测算，而是对所有障碍物直接进行测量。</p>
@@ -281,29 +281,29 @@
 <p>因为结构光光源带有很多特征点或者编码，因此提供了很多的匹配角点或者直接的码字，可以很方便的进行特征点的匹配。</p>
 <h3 id="4-TOF深度摄像头"><a href="#4-TOF深度摄像头" class="headerlink" title="4. TOF深度摄像头"></a>4. TOF深度摄像头</h3><p>TOF是Time of flight的简写，直译为飞行时间的意思。</p>
 <p>所谓飞行时间法3D成像，是通过给目标连续发送光脉冲，然后用传感器接收从物体返回的光，通过探测光脉冲的飞行（往返）时间来得到目标物体的距离。这种技术跟3D激光传感器原理基本类似，只不过3D激光传感器是逐点扫描，而TOF相机则是同时得到整幅图像的深度信息。</p>
-<p>TOF相机与普通机器视觉成像过程也有类似之处，都是由光源、光学部件、传感器、控制电路以及处理电路等几部单元组成。<br><img src="https://img.vim-cn.com/5f/fb40477fc86661cf5706f81c6cfcd2d5340e6b.webp" alt="单目TOF Kinect二代" title="单目TOF Kinect二代"></p>
+<p>TOF相机与普通机器视觉成像过程也有类似之处，都是由光源、光学部件、传感器、控制电路以及处理电路等几部单元组成。<br><img src="https://i.loli.net/2019/09/10/2MDoGIT9skPBfYx.png" alt="单目TOF Kinect二代" title="单目TOF Kinect二代"></p>
 <center><font face="黑体">单目TOF Kinect二代<font></font></font></center>
 
 <p>各种摄像头性能和成本比较：</p>
-<p><img src="https://img.vim-cn.com/26/9425b64009c0bea9784f01f979a83a2877a3bb.webp" alt=""></p>
+<p><img src="https://i.loli.net/2019/09/10/h4FKUuepclJ3fdt.png" alt=""></p>
 <p>由上表对比可知，无论是结构光还是TOF方案，都需要增加主动光，因此，其检测距离受到了光强度的限制，无法适用于远距离的检测，一般只用于机器人的感知，而普通单目和双目摄像头除了在机器人上应用，还可以用于ADAS和自动驾驶汽车上。</p>
 <h2 id="二、激光雷达"><a href="#二、激光雷达" class="headerlink" title="二、激光雷达"></a>二、激光雷达</h2><p>激光雷达以激光作为信号源，由激光器发射出的脉冲激光，打到对面物体上，引起散射，一部分光波会反射到激光雷达的接收器上，根据激光测距原理计算，就得到从激光雷达到目标点的距离，脉冲激光不断地扫描目标物，就可以得到目标物上全部目标点的数据，用此数据进行成像处理后，即可得到精确的目标物体图像。</p>
-<p><img src="https://img.vim-cn.com/56/bb48cd9e427b8fdcf353e0c09d7729de3f057a.webp" alt=""></p>
+<p><img src="https://i.loli.net/2019/09/10/QMBfig5F1aC9rhy.png" alt=""></p>
 <p>激光雷达分为单线和多线，常见的多线激光雷达有4线，8线，16线，32线和64线。</p>
 <ul>
 <li>单线激光雷达扫描的区域可以简单定义为一个平面，是一个二维扫描方案</li>
 <li>4线、8线雷达纵向扫描范围从3.2°到6.4°，这个范围不能称为一个3D的扫描，一般定义为2.5D扫描方案。</li>
-<li>64线雷达扫描的整个范围面就比较大，纵向甚至可以一直到30多度，讲究对整个环境、3D的点云数据收集，单位时间内收集到的反馈点数多，数据量大。<br><img src="https://img.vim-cn.com/33/5c74db724f2b5946ba862c7e371b9ad6bdaf00.webp" alt="SICK单线激光雷达" title="SICK单线激光雷达"><center><font face="黑体">SICK单线激光雷达<font></font></font></center>
+<li>64线雷达扫描的整个范围面就比较大，纵向甚至可以一直到30多度，讲究对整个环境、3D的点云数据收集，单位时间内收集到的反馈点数多，数据量大。<br><img src="https://i.loli.net/2019/09/10/DSks5pvQzoCnc7e.png" alt="SICK单线激光雷达" title="SICK单线激光雷达"><center><font face="黑体">SICK单线激光雷达<font></font></font></center>
 
 </li>
 </ul>
-<p><img src="https://img.vim-cn.com/c3/604e969c08a8eb012e5a636e0be46f85e38376.webp" alt="单线二维激光雷达扫描图" title="单线二维激光雷达扫描图"></p>
+<p><img src="https://i.loli.net/2019/09/10/6VtYyXIOTne9AJQ.png" alt="单线二维激光雷达扫描图" title="单线二维激光雷达扫描图"></p>
 <center><font face="黑体">单线二维激光雷达扫描图<font></font></font></center>
 
-<p><img src="https://img.vim-cn.com/aa/edbf6b0e5b051601f045ee109ac6bbf4f33b1a.webp" alt="Velodyne多线激光雷达" title="Velodyne多线激光雷达"></p>
+<p><img src="https://i.loli.net/2019/09/10/3qFlbKfi5resVLQ.png" alt="Velodyne多线激光雷达" title="Velodyne多线激光雷达"></p>
 <center><font face="黑体">Velodyne多线激光雷达<font></font></font></center>
 
-<p><img src="https://img.vim-cn.com/7a/7c1d0bb7e0d6a5064ac793745f740ed6c7a544.webp" alt="64线三维激光雷达扫描图" title="64线三维激光雷达扫描图"></p>
+<p><img src="https://i.loli.net/2019/09/10/OKk84x2mfBoQNi9.png" alt="64线三维激光雷达扫描图" title="64线三维激光雷达扫描图"></p>
 <center><font face="黑体">64线三维激光雷达扫描图<font></font></font></center>
 
 <p>激光雷达普遍用于定位、障碍物检测、物体分类、动态物体跟踪等应用，在机器人和自动驾驶汽车上都有使用。</p>
@@ -325,7 +325,7 @@
 </ol>
 <p>目前车载雷达的频率主要分为24GHz频段和77GHz频段，其中77GHz频段代表着未来的趋势，这是国际电信联盟专门划分给车用雷达的频段。</p>
 <p>严格来说77GHz的雷达才属于毫米波雷达，但是实际上24GHz的雷达也被称为毫米波雷达。</p>
-<p><img src="https://img.vim-cn.com/2a/e41823c07a12fd6022466eb44a91275c918da3.webp" alt=""></p>
+<p><img src="https://i.loli.net/2019/09/10/jKhMGBPS3FLfNty.png" alt=""></p>
 <p>毫米波雷达在测量目标的距离、速度和角度上展现的性能和其它传感器还是略有区别的。</p>
 <ul>
 <li>视觉传感器得到的是二维信息，没有深度信息，而毫米波雷达则是具备深度信息的，可以提供目标的距离。</li>
@@ -337,7 +337,7 @@
 <p>而对于机器人的应用场景，利用毫米波雷达来探测障碍物，显得有点奢侈了，一般采用更低成本的超声波雷达来替代，但对于一些特殊应用场景的机器人（譬如消防，大型物流），由于需要在复杂环境下支持全天候、全天时作业，就必须采用毫米波雷达来实现避障。</p>
 <h2 id="四、超声波雷达"><a href="#四、超声波雷达" class="headerlink" title="四、超声波雷达"></a>四、超声波雷达</h2><p>超声波雷达是利用传感器内的超声波发生器产生 40KHz的超声波,再由接收探头接收经障碍物反射回来的超声波,根据超声波反射接收的时间差计算与障碍物之间的距离。</p>
 <p>超声波雷达成本较低,探测距离近，精度高,且不受光线条件的影响,因此常用于泊车系统中。</p>
-<p><img src="https://img.vim-cn.com/53/0e979bd6c00b0ce31add586e84abea766281dd.webp" alt=""></p>
+<p><img src="https://i.loli.net/2019/09/10/2atGd6SbVP91MhW.png" alt=""></p>
 <p>超声波最大的缺点就是检测角度太小，一辆车需要在不同角度安装好几个，除此以外，都比上面几种方案更好。</p>
 <p><strong>优点</strong></p>
 <ul>
@@ -351,11 +351,11 @@
 <p>另外，超声波雷达由于成本低，检测距离适中，因此在机器人的避障中应用也很广。汽车相对于绝大部分室内应用的机器人来说，对防护等级要求较高，因此，汽车上用的都是高防护等级的收发一体化的超声波雷达。</p>
 <h2 id="五、红外"><a href="#五、红外" class="headerlink" title="五、红外"></a>五、红外</h2><p>红外线的工作原理是利用高频调制的红外线在待测距离上往返产生的相位移推算出光束度越时间△t，从而根据D＝C△t/2得到距离D。红外传感器的测距基本原理为发光管发出红外光，光敏接收管接收前方物体反射光，据此判断前方是否有障碍物。根据发射光的强弱可以判断物体的距离，它的原理是接收管接收的光强随反射物体的距离而变化的，距离近则反射光强，距离远则反射光弱。 </p>
 <p>目前，使用较多的一种传感器红外光电开关，它的发射频率一般为38 kHz左右，探测距离一般比较短，通常被用作近距离障碍目标的识别。红外只适合短距离测距，因此基本上只用于低速移动的机器人上防碰撞。</p>
-<p><img src="https://img.vim-cn.com/fa/9b4133f7c6f1207afa189af0389296ffab1895.png" alt=""></p>
+<p><img src="https://i.loli.net/2019/09/10/suNbJxl8QIOrpTY.png" alt=""></p>
 <p>各种传感器的技术指标对比：</p>
-<p><img src="https://img.vim-cn.com/d2/651b2246fc872a3e4834b374452a5a2748b07f.webp" alt=""></p>
+<p><img src="https://i.loli.net/2019/09/10/2atGd6SbVP91MhW.png" alt=""></p>
 <h2 id="六、IMU"><a href="#六、IMU" class="headerlink" title="六、IMU"></a>六、IMU</h2><p>IMU（惯性测量单元）是测量物体三轴姿态角(或角速率)以及加速度的装置。一般一个IMU包含三个单轴的加速度计和三个单轴的陀螺，加速度计检测物体在载体坐标系统独立三轴的加速度信号，而陀螺检测载体相对于导航坐标系的角速度信号，测量物体在三维空间中的角速度和加速度，并以此计算出物体的姿态。</p>
-<p><img src="https://img.vim-cn.com/68/2c5d5ea14d450d813edfd2600de7c73ccc3d32.jpg" alt=""></p>
+<p><img src="https://i.loli.net/2019/09/10/pgBdPeTO7QqD4Fa.jpg" alt=""></p>
 <p>惯性传感器的定位误差会随着运行时间增长，但由于其是高频传感器，在短时间内可以提供稳定的实时位置更新。IMU大多用在需要进行运动控制的设备，如汽车和机器人上，在导航中有着很重要的应用价值。</p>
 <h2 id="七、GPS"><a href="#七、GPS" class="headerlink" title="七、GPS"></a>七、GPS</h2><p>GPS由GPS接收机和卫星天线组成，主要通过卫星来计算我们当前的位置和速度。通过测量从卫星上接收信号的时间，设备能够实现精确度大约在10m左右的定位。</p>
 <p>一个略为改进过的定位系统上线了，我们可以把它称为差分全球定位系统(DGPS)，因为使用了地面基准站的关系，这个系统的精确度被提升到了1m。但这个精度对机器人和自动驾驶汽车的使用场景来说，都是不够的。因此，GPS一般需要融合IMU实现厘米级的定位。</p>
@@ -376,7 +376,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-09-10T00:28:35+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-09-10T10:12:23+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>最后更新于 2019年9月10日</p>
